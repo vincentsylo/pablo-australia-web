@@ -4,7 +4,7 @@ import _ from 'lodash';
 import styles from './App.css';
 import routes from '../routes';
 
-export default (data) => (
+export default data => (
   <div className={styles.root}>
     <nav>
       <Link to="/">Home</Link>

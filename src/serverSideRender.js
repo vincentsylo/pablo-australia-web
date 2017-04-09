@@ -18,9 +18,9 @@ export default async function render(req, res) {
   );
 
   const promises = [];
-  routes.some(route => {
+  routes.some((route) => {
     const match = matchPath(req.url, route);
-    if (match) {
+    if (match && route.fetch) {
       promises.push(route.fetch(match));
     }
     return match;

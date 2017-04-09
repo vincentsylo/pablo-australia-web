@@ -10,14 +10,14 @@ export default [
     key: 'home',
     exact: true,
     path: '/',
-    fetch: () => {},
-    render: (data) => <Home {...data} />,
+    fetch: () => ({}),
+    render: data => <Home {...data} />,
   },
   {
     key: 'shop',
     path: '/shop',
-    fetch: () => {},
-    render: (data) => <Shop {...data} />,
+    fetch: () => ({}),
+    render: data => <Shop {...data} />,
   },
   {
     key: 'menu',
