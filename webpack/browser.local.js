@@ -47,6 +47,13 @@ export default {
           'postcss-loader',
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif|svg|woff)$/,
+        use: [
+          'file-loader?name=[name].[ext]',
+        ],
+        exclude: /node_modules/,
+      },
     ],
   },
 

@@ -8,7 +8,7 @@ export default ({ html, data }) => `
     renderToStaticMarkup((
       <html lang="en">
         <head>
-          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" />
           {assets.app.css ? <link rel="stylesheet" type="text/css" href={assets.app.css} /> : null}
         </head>
 

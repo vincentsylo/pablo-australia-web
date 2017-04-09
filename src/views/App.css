@@ -1,8 +1,44 @@
-@import "normalize.css";
+@import 'normalize.css';
 
 html,
 body {
   font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.nav {
+  background: url('./images/bg_left-nav.gif') 0 0 repeat-y;
+  bottom: 0;
+  position: fixed;
+  top: 0;
+  width: 155px;
+}
+
+.navLink {
+  color: #fff;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.logo {
+  display: block;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.mainContent {
+  margin-left: 155px;
 }

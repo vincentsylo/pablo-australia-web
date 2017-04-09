@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './Home.css';
 
 export default () => (
-  <div>
+  <div className={styles.root}>
     Home
   </div>
 );

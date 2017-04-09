@@ -3,6 +3,7 @@ import Home from './views/Home/Home';
 import Shop from './views/Shop/Shop';
 import Menu from './views/Menu/Menu';
 import Contact from './views/Contact/Contact';
+import Social from './views/Social/Social';
 import NoMatch from './views/NoMatch/NoMatch';
 
 export default [
@@ -28,6 +29,11 @@ export default [
     key: 'contact',
     path: '/contact',
     component: Contact,
+  },
+  {
+    key: 'social',
+    path: '/social',
+    component: Social,
   },
   {
     key: 'nomatch',
