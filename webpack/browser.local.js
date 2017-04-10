@@ -22,7 +22,6 @@ export default {
     publicPath: '/',
     hotUpdateChunkFilename: 'hot-update/[id].[hash].js',
     hotUpdateMainFilename: 'hot-update/[hash].json',
-
   },
 
   devServer: {
@@ -35,7 +34,7 @@ export default {
         context: ['**', '!/hot-update/**'],
         target: 'http://localhost:8081',
         secure: false,
-      }
+      },
     ],
   },
 
