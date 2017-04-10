@@ -1,6 +1,10 @@
 import path from 'path';
 import nodeExternals from 'webpack-node-externals';
 import CleanPlugin from 'clean-webpack-plugin';
+import OnBuildPlugin from 'on-build-webpack';
+import nodemon from 'nodemon';
+
+let serverStarted = false;
 
 export default {
   devtool: 'eval',
@@ -13,8 +17,8 @@ export default {
   ],
 
   output: {
-    path: path.join(__dirname, '../build'),
-    filename: 'server.js',
+    path: path.join(__dirname, '../build/public'),
+    filename: '../server.js',
     libraryTarget: 'commonjs2',
     publicPath: '/',
   },
@@ -61,5 +65,18 @@ export default {
     ], {
       root: process.cwd(),
     }),
+    new OnBuildPlugin(() => {
+      if (!serverStarted) {
+        const watcher = nodemon('./build/server');
+
+        process.once('SIGINT', () => {
+          watcher.once('exit', () => {
+            process.exit();
+          });
+        });
+
+        serverStarted = true;
+      }
+    })
   ],
 }

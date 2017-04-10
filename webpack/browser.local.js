@@ -20,6 +20,9 @@ export default {
     path: path.join(__dirname, '../build/public'),
     filename: '[name].js',
     publicPath: '/',
+    hotUpdateChunkFilename: 'hot-update/[id].[hash].js',
+    hotUpdateMainFilename: 'hot-update/[hash].json',
+
   },
 
   devServer: {
@@ -27,9 +30,13 @@ export default {
     contentBase: path.join(__dirname, '../build/public'),
     publicPath: '/',
     port: 8080,
-    proxy: {
-      '**': 'http://localhost:8081',
-    },
+    proxy: [
+      {
+        context: ['**', '!/hot-update/**'],
+        target: 'http://localhost:8081',
+        secure: false,
+      }
+    ],
   },
 
   module: {
