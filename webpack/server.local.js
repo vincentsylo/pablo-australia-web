@@ -29,7 +29,7 @@ export default {
     nodeExternals(),
     {
       assets: `${process.cwd()}/build/assets.json`,
-    }
+    },
   ],
 
   module: {
