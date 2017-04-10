@@ -7,28 +7,12 @@ const app = express();
 
 getApi(app);
 
-/* eslint-disable */
-if (process.env.NODE_ENV !== 'production') {
-  const webpack = require('webpack');
-  const webpackConfig = require('../webpack/browser.local');
-  const compiler = webpack(webpackConfig);
-  app.use(require('webpack-dev-middleware')(compiler, {
-    publicPath: webpackConfig.output.publicPath,
-  }));
-  app.use(require('webpack-hot-middleware')(compiler, {
-    path: '/__webpack_hmr',
-  }));
-  app.get('*', require('../build/serverSideRender'));
- } else {
-  app.use(express.static('dist/public'));
-  app.get('*', require('./serverSideRender'));
- }
-/* eslint-enable */
+app.use(express.static('dist/public'));
+app.use(express.static('build/public'));
+app.get('*', require('./server/serverSideRender'));
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 models.sequelize.sync({ force: false })
   .then(() => {
-    app.listen(port, () => {
-      console.log(`Server listening on port: ${port}`); // eslint-disable-line
-    });
+    app.listen(port);
   });

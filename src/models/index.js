@@ -1,8 +1,6 @@
-/* @flow */
-import fs from 'fs';
-import path from 'path';
 import Sequelize from 'sequelize';
 import _ from 'lodash';
+import product from './product';
 
 const sequelize = new Sequelize(
   process.env.POSTGRES_DB,
@@ -20,12 +18,7 @@ const sequelize = new Sequelize(
 );
 
 const db = {};
-_(fs.readdirSync(__dirname))
-  .filter(file => file.indexOf('.') !== 0 && file !== 'index.js')
-  .each((file) => {
-    const model = sequelize.import(path.join(__dirname, file));
-    db[model.name] = model;
-  });
+db[product.name] = product;
 
 _.keys(db, (modelName) => {
   if ('associate' in db[modelName]) {

@@ -8,12 +8,13 @@ export default {
   context: path.join(__dirname, '../src'),
 
   entry: [
-    './serverSideRender.js',
+    'babel-polyfill',
+    './server.js',
   ],
 
   output: {
     path: path.join(__dirname, '../build'),
-    filename: 'serverSideRender.js',
+    filename: 'server.js',
     libraryTarget: 'commonjs2',
     publicPath: '/',
   },

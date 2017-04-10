@@ -13,7 +13,7 @@ export default ({ html, data }) => `
         </head>
 
         <body>
-          <div id="app">${html}</div>
+          <div id="app" dangerouslySetInnerHTML={{ __html: html }} />
           <script dangerouslySetInnerHTML={{ __html: `window.__PRELOADED_DATA__ = ${JSON.stringify(data)};` }} />
           <script async type="text/javascript" src={assets.app.js} />
         </body>

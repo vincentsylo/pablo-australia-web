@@ -9,6 +9,7 @@ export default {
   context: path.join(__dirname, '../src'),
 
   entry: [
+    'babel-polyfill',
     './server.js',
   ],
 

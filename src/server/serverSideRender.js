@@ -1,9 +1,9 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter, matchPath } from 'react-router-dom';
-import htmlTemplate from './server/htmlTemplate';
-import App from './views/App';
-import routes from './routes';
+import htmlTemplate from './htmlTemplate';
+import App from '../views/App';
+import routes from '../routes';
 
 export default async function render(req, res) {
   const context = {};

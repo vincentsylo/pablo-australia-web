@@ -10,23 +10,26 @@ export default {
   entry: {
     app: [
       'react-hot-loader/patch',
-      'webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr',
+      'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
       './client',
     ],
   },
 
   output: {
-    path: path.join(__dirname, '../build'),
+    path: path.join(__dirname, '../build/public'),
     filename: '[name].js',
     publicPath: '/',
   },
 
   devServer: {
     hot: true,
-    contentBase: path.join(__dirname, '../build'),
+    contentBase: path.join(__dirname, '../build/public'),
     publicPath: '/',
     port: 8080,
+    proxy: {
+      '**': 'http://localhost:8081',
+    },
   },
 
   module: {
