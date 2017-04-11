@@ -1,7 +1,6 @@
 import path from 'path';
 import nodeExternals from 'webpack-node-externals';
 import webpack from 'webpack';
-import CleanPlugin from 'clean-webpack-plugin';
 
 export default {
   devtool: 'none',
@@ -55,12 +54,6 @@ export default {
   },
 
   plugins: [
-    new CleanPlugin([
-      'build',
-      'dist',
-    ], {
-      root: process.cwd(),
-    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,

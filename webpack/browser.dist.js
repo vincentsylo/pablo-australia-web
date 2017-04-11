@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import AssetsPlugin from 'assets-webpack-plugin';
+import CleanPlugin from 'clean-webpack-plugin';
 
 export default {
   devtool: 'none',
@@ -55,6 +56,12 @@ export default {
   },
 
   plugins: [
+    new CleanPlugin([
+      'build',
+      'dist',
+    ], {
+      root: process.cwd(),
+    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,

@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import AssetsPlugin from 'assets-webpack-plugin';
+import WriteFilePlugin from 'write-file-webpack-plugin';
 
 export default {
   devtool: 'cheap-module-source-map',
@@ -24,10 +25,14 @@ export default {
     hotUpdateMainFilename: 'hot-update/[hash].json',
   },
 
+  target: 'web',
+
   devServer: {
     hot: true,
     contentBase: path.join(__dirname, '../build/public'),
     publicPath: '/',
+    host: '0.0.0.0',
+    inline: false,
     port: 8080,
     proxy: [
       {
@@ -67,6 +72,7 @@ export default {
   },
 
   plugins: [
+    new WriteFilePlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new AssetsPlugin({

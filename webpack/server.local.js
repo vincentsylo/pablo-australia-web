@@ -3,7 +3,7 @@ import nodeExternals from 'webpack-node-externals';
 import CleanPlugin from 'clean-webpack-plugin';
 import OnBuildPlugin from 'on-build-webpack';
 import nodemon from 'nodemon';
-
+import WriteFilePlugin from 'write-file-webpack-plugin';
 let serverStarted = false;
 
 export default {
@@ -65,6 +65,7 @@ export default {
     ], {
       root: process.cwd(),
     }),
+    new WriteFilePlugin(),
     new OnBuildPlugin(() => {
       if (!serverStarted) {
         const watcher = nodemon('./build/server');

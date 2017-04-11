@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel-node -- scripts/build.js",
+    "build": "webpack",
     "lint": "eslint src && stylelint src/**/*.css",
-    "start": "babel-node -- scripts/start.js"
+    "start": "webpack-dev-server"
   },
   "keywords": [],
   "author": "",
@@ -63,6 +63,7 @@
     "stylelint-order": "0.4.3",
     "webpack": "2.3.3",
     "webpack-dev-server": "2.4.2",
-    "webpack-node-externals": "1.5.4"
+    "webpack-node-externals": "1.5.4",
+    "write-file-webpack-plugin": "4.0.0"
   }
 }
