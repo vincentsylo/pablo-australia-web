@@ -1,6 +1,7 @@
 import Sequelize from 'sequelize';
 import _ from 'lodash';
-import product from './product';
+import Product from './Product';
+import Shop from './Shop';
 
 const sequelize = new Sequelize(
   process.env.POSTGRES_DB,
@@ -18,7 +19,14 @@ const sequelize = new Sequelize(
 );
 
 const db = {};
-db[product.name] = product;
+const tables = [
+  Product,
+  Shop,
+];
+_.each(tables, (table) => {
+  const model = table(sequelize, Sequelize);
+  db[model.name] = model;
+});
 
 _.keys(db, (modelName) => {
   if ('associate' in db[modelName]) {

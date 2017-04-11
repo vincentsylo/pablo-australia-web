@@ -1,6 +1,5 @@
-/* @flow */
 export default function (sequelize, DataTypes) {
-  return sequelize.define('product', {
+  return sequelize.define('Product', {
     id: {
       type: DataTypes.STRING,
       primaryKey: true,
