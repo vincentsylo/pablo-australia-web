@@ -15,6 +15,7 @@ export default ({ html, data }) => `
         <body>
           <div id="app" dangerouslySetInnerHTML={{ __html: html }} />
           <script dangerouslySetInnerHTML={{ __html: `window.__PRELOADED_DATA__ = ${JSON.stringify(data)};` }} />
+          <script src="https://use.fontawesome.com/991f6bb4f8.js" />
           <script async type="text/javascript" src={assets.app.js} />
         </body>
       </html>

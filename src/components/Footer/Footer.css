@@ -1,0 +1,46 @@
+.root {
+  margin: 0 auto;
+}
+
+.footerTop {
+  background: url('./bg_footer_page.png') center center no-repeat;
+  height: 35px;
+  margin-top: -35px;
+}
+
+.footerBottom {
+  background: url('./bg_footer_page02.png') 62px center no-repeat;
+  bottom: -35px;
+  height: 35px;
+  position: relative;
+}
+
+.backToTop {
+  background-color: #222;
+  border-radius: 20px;
+  bottom: 40px;
+  position: fixed;
+  right: 40px;
+  transition: opacity 0.3s ease;
+
+  &.show {
+    opacity: 1;
+  }
+
+  &.hide {
+    opacity: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+}
+
+.icon {
+  color: #fff;
+  height: 40px;
+  line-height: 35px !important;
+  text-align: center;
+  width: 40px;
+}
