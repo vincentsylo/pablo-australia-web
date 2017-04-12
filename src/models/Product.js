@@ -1,5 +1,5 @@
 export default function (sequelize, DataTypes) {
-  return sequelize.define('Product', {
+  const Product = sequelize.define('Product', {
     id: {
       type: DataTypes.STRING,
       primaryKey: true,
@@ -7,5 +7,19 @@ export default function (sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING,
     },
+    description: {
+      type: DataTypes.STRING,
+    },
+    price: {
+      type: DataTypes.DECIMAL,
+    },
+  }, {
+    classMethods: {
+      associate: (models) => {
+        Product.belongsTo(models.Category, { as: 'Category', foreignKey: 'categoryId' });
+      },
+    },
   });
+
+  return Product;
 }
