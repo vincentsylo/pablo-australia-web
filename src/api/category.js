@@ -1,0 +1,67 @@
+import models from '../models';
+
+export default function (app) {
+  app.get('/api/category', async (req, res) => {
+    try {
+      const categories = await models.Category.findAll({
+        include: [{ model: models.Product, as: 'Products' }],
+      });
+      res.json(categories);
+    } catch (error) {
+      res.sendStatus(400);
+    }
+  });
+
+  app.get('/api/category/:categoryId', async (req, res) => {
+    try {
+      const { categoryId } = req.params;
+
+      const category = await models.Category.findById(categoryId);
+      res.json(category);
+    } catch (error) {
+      res.sendStatus(400);
+    }
+  });
+
+  app.put('/api/category/:categoryId', async (req, res) => {
+    try {
+      const { categoryId } = req.params;
+      const { name, priority } = req.body;
+
+      if (name) {
+        const category = await models.Category.update({ name, priority }, { where: { id: categoryId } });
+        res.json(category);
+      } else {
+        res.sendStatus(404);
+      }
+    } catch (error) {
+      res.sendStatus(400);
+    }
+  });
+
+  app.post('/api/category', async (req, res) => {
+    try {
+      const { name, priority } = req.body;
+
+      if (name) {
+        const category = await models.Category.create({ name, priority });
+        res.json(category);
+      } else {
+        res.sendStatus(404);
+      }
+    } catch (error) {
+      res.sendStatus(400);
+    }
+  });
+
+  app.delete('/api/category/:categoryId', async (req, res) => {
+    try {
+      const { categoryId } = req.params;
+
+      const deletedRows = await models.Category.destroy({ where: { id: categoryId } });
+      res.json(deletedRows);
+    } catch (error) {
+      res.sendStatus(400);
+    }
+  });
+}

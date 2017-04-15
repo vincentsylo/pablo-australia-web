@@ -1,7 +1,9 @@
-import product from './product';
 import shop from './shop';
+import category from './category';
+import product from './product';
 
 export default function (app) {
-  product(app);
   shop(app);
+  category(app);
+  product(app);
 }

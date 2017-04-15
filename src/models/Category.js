@@ -1,5 +1,5 @@
 export default function (sequelize, DataTypes) {
-  const Product = sequelize.define('Product', {
+  const Category = sequelize.define('Category', {
     id: {
       type: DataTypes.STRING,
       primaryKey: true,
@@ -9,14 +9,14 @@ export default function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.STRING,
+    priority: {
+      type: DataTypes.INTEGER,
     },
   }, {
     classMethods: {
       associate: (models) => {
-        Product.belongsTo(models.Category, {
-          as: 'Category',
+        Category.hasMany(models.Product, {
+          as: 'Products',
           foreignKey: {
             name: 'categoryId',
             allowNull: false,
@@ -27,5 +27,5 @@ export default function (sequelize, DataTypes) {
     paranoid: true,
   });
 
-  return Product;
+  return Category;
 }
