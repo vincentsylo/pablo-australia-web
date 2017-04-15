@@ -3,6 +3,7 @@ export default function (sequelize, DataTypes) {
     id: {
       type: DataTypes.STRING,
       primaryKey: true,
+      defaultValue: DataTypes.UUIDV1,
     },
     branchName: {
       type: DataTypes.STRING,

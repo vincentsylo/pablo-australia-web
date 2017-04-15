@@ -3,22 +3,28 @@ export default function (sequelize, DataTypes) {
     id: {
       type: DataTypes.STRING,
       primaryKey: true,
+      defaultValue: DataTypes.UUIDV1,
     },
     name: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
     },
-    price: {
-      type: DataTypes.DECIMAL,
-    },
   }, {
     classMethods: {
       associate: (models) => {
-        Product.belongsTo(models.Category, { as: 'Category', foreignKey: 'categoryId' });
+        Product.belongsTo(models.Category, {
+          as: 'Category',
+          foreignKey: {
+            name: 'categoryId',
+            allowNull: false,
+          },
+        });
       },
     },
+    paranoid: true,
   });
 
   return Product;
