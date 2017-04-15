@@ -1,9 +1,14 @@
 import express from 'express';
-import 'dotenv/config'; // Setup process.env variables
+import 'dotenv/config';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 import models from './models';
 import getApi from './api';
 
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 getApi(app);
 
