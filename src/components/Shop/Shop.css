@@ -2,3 +2,19 @@
   background: url('./bg_footer_shop.gif') 0 0 repeat;
   padding: 50px 0;
 }
+
+.content {
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 1120px;
+}
+
+.state {
+  color: #663300;
+  display: block;
+  font-weight: 700;
+}
+
+.city {
+  font-size: 12px;
+}

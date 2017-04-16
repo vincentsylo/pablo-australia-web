@@ -1,42 +1,43 @@
-import React from 'react';
 import Home from './views/Home/Home';
-import Shop from './views/Shop/Shop';
+import Shops from './views/Shops/Shops';
 import Menu from './views/Menu/Menu';
+import Product from './views/Menu/Product/Product';
 import Contact from './views/Contact/Contact';
 import Social from './views/Social/Social';
+import About from './views/About/About';
 import NoMatch from './views/NoMatch/NoMatch';
 
 export default [
   {
-    key: 'home',
     exact: true,
     path: '/',
-    fetch: () => ({}),
-    render: data => <Home {...data} />,
+    component: Home,
   },
   {
-    key: 'shop',
     path: '/shop',
-    fetch: () => ({}),
-    render: data => <Shop {...data} />,
+    component: Shops,
   },
   {
-    key: 'menu',
+    path: '/menu/:id',
+    component: Product,
+  },
+  {
     path: '/menu',
     component: Menu,
   },
   {
-    key: 'contact',
     path: '/contact',
     component: Contact,
   },
   {
-    key: 'social',
     path: '/social',
     component: Social,
   },
   {
-    key: 'nomatch',
+    path: '/about',
+    component: About,
+  },
+  {
     component: NoMatch,
   },
 ];

@@ -2,17 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
 import App from './views/App';
 
-const data = window.__PRELOADED_DATA__;
-delete window.__PRELOADED_DATA__;
+const prefetchedData = window.__PREFETCHED_DATA__;
+const store = configureStore(prefetchedData);
+delete window.__PREFETCHED_DATA__;
+
+const appData = window.__APP_DATA__;
+delete window.__APP_DATA__;
 
 const render = () => {
   ReactDOM.render(
     <AppContainer>
-      <BrowserRouter>
-        <App {...data} />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App {...appData} />
+        </BrowserRouter>
+      </Provider>
     </AppContainer>,
     document.getElementById('app'),
   );

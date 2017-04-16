@@ -2,7 +2,7 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import assets from 'assets';
 
-export default ({ html, data }) => `
+export default ({ html, store, appData }) => `
   <!DOCTYPE html>
   ${
     renderToStaticMarkup((
@@ -14,7 +14,7 @@ export default ({ html, data }) => `
 
         <body>
           <div id="app" dangerouslySetInnerHTML={{ __html: html }} />
-          <script dangerouslySetInnerHTML={{ __html: `window.__PRELOADED_DATA__ = ${JSON.stringify(data)};` }} />
+          <script dangerouslySetInnerHTML={{ __html: `window.__PREFETCHED_DATA__ = ${JSON.stringify(store)}; window.__APP_DATA__ = ${JSON.stringify(appData)}` }} />
           <script src="https://use.fontawesome.com/991f6bb4f8.js" />
           <script async type="text/javascript" src={assets.app.js} />
         </body>

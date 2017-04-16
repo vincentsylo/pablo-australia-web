@@ -1,0 +1,19 @@
+.featureTile {
+  border-radius: 10px;
+  margin: 2px;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    transform: rotate(2deg) scale(1.1);
+  }
+}
+
+.large {
+  height: 554px;
+  width: 554px;
+}
+
+.small {
+  height: 275px;
+  width: 275px;
+}

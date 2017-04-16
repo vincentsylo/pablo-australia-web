@@ -11,6 +11,7 @@ export default {
 
   entry: {
     app: [
+      'babel-polyfill',
       './client',
     ],
   },

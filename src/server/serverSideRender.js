@@ -1,11 +1,21 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter, matchPath } from 'react-router-dom';
+import { StaticRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import htmlTemplate from './htmlTemplate';
 import App from '../views/App';
-import routes from '../routes';
+import configureStore from '../store/configureStore';
+import fetchData from './fetchData';
 
 export default async function render(req, res) {
+  const promises = [
+    App.fetch(),
+    fetchData(req),
+  ];
+
+  const [appData, prefetchedData] = await Promise.all(promises);
+  const store = configureStore({ prefetchedData });
+
   const context = {};
 
   const html = renderToString(
@@ -13,24 +23,15 @@ export default async function render(req, res) {
       location={req.url}
       context={context}
     >
-      <App />
+      <Provider store={store}>
+        <App {...appData} />
+      </Provider>
     </StaticRouter>,
   );
-
-  const promises = [];
-  routes.some((route) => {
-    const match = matchPath(req.url, route);
-    if (match && route.fetch) {
-      promises.push(route.fetch(match));
-    }
-    return match;
-  });
-
-  const [data] = await Promise.all(promises);
 
   if (context.url) {
     res.writeHead(301, { Location: context.url });
   } else {
-    res.send(htmlTemplate({ html, data }));
+    res.send(htmlTemplate({ html, store: store.getState(), appData }));
   }
 }

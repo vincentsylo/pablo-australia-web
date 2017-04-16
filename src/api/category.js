@@ -26,14 +26,9 @@ export default function (app) {
   app.put('/api/category/:categoryId', async (req, res) => {
     try {
       const { categoryId } = req.params;
-      const { name, priority } = req.body;
 
-      if (name) {
-        const category = await models.Category.update({ name, priority }, { where: { id: categoryId } });
-        res.json(category);
-      } else {
-        res.sendStatus(404);
-      }
+      const category = await models.Category.update({ ...req.body }, { where: { id: categoryId } });
+      res.json(category);
     } catch (error) {
       res.sendStatus(400);
     }
@@ -41,14 +36,8 @@ export default function (app) {
 
   app.post('/api/category', async (req, res) => {
     try {
-      const { name, priority } = req.body;
-
-      if (name) {
-        const category = await models.Category.create({ name, priority });
-        res.json(category);
-      } else {
-        res.sendStatus(404);
-      }
+      const category = await models.Category.create({ ...req.body });
+      res.json(category);
     } catch (error) {
       res.sendStatus(400);
     }

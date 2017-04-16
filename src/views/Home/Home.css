@@ -1,3 +1,18 @@
 .root {
   background: url('../images/bg_contents.gif') repeat;
+  padding-bottom: 35px;
+}
+
+.row {
+  display: flex;
+  height: 558px;
+  margin: 0 auto;
+  width: 1120px;
+}
+
+.column {
+  display: flex;
+  flex-flow: row wrap;
+  flex-shrink: 0;
+  width: 558px;
 }

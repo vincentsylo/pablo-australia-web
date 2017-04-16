@@ -8,6 +8,13 @@
   margin-top: -35px;
 }
 
+.footerContent {
+  display: flex;
+  font-size: 12px;
+  margin: 0 auto;
+  width: 1120px;
+}
+
 .footerBottom {
   background: url('./bg_footer_page02.png') 62px center no-repeat;
   bottom: -35px;
@@ -43,4 +50,27 @@
   line-height: 35px !important;
   text-align: center;
   width: 40px;
+}
+
+.list {
+  flex: 1;
+  list-style-image: url('./ico_list_black.png');
+
+  & li {
+    padding: 5px 0;
+  }
+
+  & li a {
+    color: #222;
+    text-decoration: none;
+  }
+
+  & li a:hover {
+    text-decoration: underline;
+  }
+}
+
+.subList {
+  list-style-image: url('./ico_list_black02.png');
+  padding-left: 20px;
 }
