@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import smoothScroll from 'smoothscroll';
+import _ from 'lodash';
+import { Link } from 'react-router-dom';
 import styles from './Footer.css';
 import Shop from '../Shop/Shop';
 
 export default class Footer extends Component {
+  static propTypes = {
+    categories: PropTypes.array.isRequired,
+  };
+
   constructor() {
     super();
 
@@ -30,13 +37,30 @@ export default class Footer extends Component {
   }
 
   render() {
+    const { categories } = this.props;
     const { scrollTop } = this.state;
 
     return (
       <footer className={styles.root}>
         <div className={styles.footerTop} />
         <div className={styles.footerContent}>
-          Footer
+          <ul className={styles.list}>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+          <ul className={styles.list}>
+            <li>
+              <Link to="/menu">Product List</Link>
+              <ul className={styles.subList}>
+                {
+                  _.map(categories, category => (
+                    <li key={category.id}><Link to={`/menu#${category.name}`}>{category.name}</Link></li>
+                  ))
+                }
+              </ul>
+            </li>
+          </ul>
         </div>
         <div className={styles.footerBottom} />
         <Shop />

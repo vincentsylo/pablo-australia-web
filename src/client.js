@@ -10,12 +10,15 @@ const prefetchedData = window.__PREFETCHED_DATA__;
 const store = configureStore(prefetchedData);
 delete window.__PREFETCHED_DATA__;
 
+const appData = window.__APP_DATA__;
+delete window.__APP_DATA__;
+
 const render = () => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
         <BrowserRouter>
-          <App />
+          <App {...appData} />
         </BrowserRouter>
       </Provider>
     </AppContainer>,
