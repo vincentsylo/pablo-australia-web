@@ -12,6 +12,15 @@ export default function (sequelize, DataTypes) {
     description: {
       type: DataTypes.STRING,
     },
+    shortDescription: {
+      type: DataTypes.STRING,
+    },
+    featured: {
+      type: DataTypes.BOOLEAN,
+    },
+    imgUrl: {
+      type: DataTypes.STRING,
+    },
   }, {
     classMethods: {
       associate: (models) => {

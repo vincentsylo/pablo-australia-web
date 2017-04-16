@@ -3,6 +3,6 @@ import styles from './News.css';
 
 export default () => (
   <div className={styles.root}>
-    News
+    <h2>News</h2>
   </div>
 );

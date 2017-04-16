@@ -1,6 +1,7 @@
 import Home from './views/Home/Home';
 import Shop from './views/Shop/Shop';
 import Menu from './views/Menu/Menu';
+import Product from './views/Menu/Product/Product';
 import Contact from './views/Contact/Contact';
 import Social from './views/Social/Social';
 import NoMatch from './views/NoMatch/NoMatch';
@@ -16,6 +17,11 @@ export default [
     key: 'shop',
     path: '/shop',
     component: Shop,
+  },
+  {
+    key: 'product',
+    path: '/menu/:id',
+    component: Product,
   },
   {
     key: 'menu',

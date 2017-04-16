@@ -1,0 +1,14 @@
+.featureTile {
+  border-radius: 10px;
+  margin: 2px;
+}
+
+.large {
+  height: 554px;
+  width: 554px;
+}
+
+.small {
+  height: 275px;
+  width: 275px;
+}

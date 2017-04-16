@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import _ from 'lodash';
-import { Footer, News } from '../components';
+import { Footer } from '../components';
 import styles from './App.css';
 import routes from '../routes';
 import logo from './images/logo.jpg';
@@ -31,8 +31,6 @@ export default () => (
           })
         }
       </Switch>
-
-      <News />
       <Footer />
     </div>
   </div>

@@ -12,6 +12,18 @@ export default function (app) {
     }
   });
 
+  app.get('/api/product/featured', async (req, res) => {
+    try {
+      const products = await models.Product.findAll({
+        where: { featured: true },
+        include: [{ model: models.Category, as: 'Category' }],
+      });
+      res.json(products);
+    } catch (error) {
+      res.sendStatus(400);
+    }
+  });
+
   app.get('/api/product/:productId', async (req, res) => {
     try {
       const { productId } = req.params;
@@ -26,9 +38,8 @@ export default function (app) {
   app.put('/api/product/:productId', async (req, res) => {
     try {
       const { productId } = req.params;
-      const { name, description, price, categoryId } = req.body;
 
-      const product = await models.Product.update({ name, description, price, categoryId }, { where: { id: productId } });
+      const product = await models.Product.update({ ...req.body }, { where: { id: productId } });
       res.json(product);
     } catch (error) {
       res.sendStatus(400);
@@ -37,9 +48,7 @@ export default function (app) {
 
   app.post('/api/product', async (req, res) => {
     try {
-      const { name, description, price, categoryId } = req.body;
-
-      const product = await models.Product.create({ name, description, price, categoryId });
+      const product = await models.Product.create({ ...req.body });
       res.json(product);
     } catch (error) {
       res.sendStatus(400);
