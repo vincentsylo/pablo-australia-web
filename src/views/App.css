@@ -16,6 +16,7 @@ body {
 
 :global(#app) {
   display: inline-block;
+  width: 100%;
 }
 
 :global(.fa::before) {
