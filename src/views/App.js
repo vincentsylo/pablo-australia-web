@@ -6,7 +6,7 @@ import styles from './App.css';
 import routes from '../routes';
 import logo from './images/logo.jpg';
 
-export default data => (
+export default () => (
   <div className={styles.root}>
     <nav className={styles.nav}>
       <h1 className={styles.logo}>
@@ -25,9 +25,9 @@ export default data => (
       <Switch>
         {
           _.map(routes, (route) => {
-            const { render, ...rest } = route;
+            const { key, ...rest } = route;
 
-            return <Route key={route.key} render={render ? render.bind(this, data) : null} {...rest} />;
+            return <Route key={key} {...rest} />;
           })
         }
       </Switch>

@@ -1,4 +1,3 @@
-import React from 'react';
 import Home from './views/Home/Home';
 import Shop from './views/Shop/Shop';
 import Menu from './views/Menu/Menu';
@@ -11,14 +10,12 @@ export default [
     key: 'home',
     exact: true,
     path: '/',
-    fetch: () => ({}),
-    render: data => <Home {...data} />,
+    component: Home,
   },
   {
     key: 'shop',
     path: '/shop',
-    fetch: () => ({}),
-    render: data => <Shop {...data} />,
+    component: Shop,
   },
   {
     key: 'menu',
