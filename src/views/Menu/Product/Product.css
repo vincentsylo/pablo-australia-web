@@ -1,0 +1,17 @@
+.root {
+  height: 740px;
+}
+
+.hero {
+  height: 100%;
+}
+
+.descriptionBox {
+  background-color: #fff;
+  border-radius: 15px 0 0 15px;
+  bottom: 80px;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  width: 410px;
+}

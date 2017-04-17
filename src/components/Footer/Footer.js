@@ -9,7 +9,14 @@ import Shop from '../Shop/Shop';
 
 export default class Footer extends Component {
   static propTypes = {
-    categories: PropTypes.array.isRequired,
+    categories: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+    })),
+  };
+
+  static defaultProps = {
+    categories: [],
   };
 
   constructor() {

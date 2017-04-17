@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Route, Link, Switch } from 'react-router-dom';
 import _ from 'lodash';
+import Helmet from 'react-helmet';
 import { fetch, Footer } from '../components';
 import { api } from '../utils';
 import styles from './App.css';
@@ -13,6 +15,7 @@ const fetchFn = async () => ({
 
 const App = ({ categories }) => (
   <div className={styles.root}>
+    <Helmet titleTemplate="%s | Pablo Australia" defaultTitle="Pablo Australia" />
     <nav className={styles.nav}>
       <h1 className={styles.logo}>
         <Link to="/">
@@ -20,7 +23,7 @@ const App = ({ categories }) => (
         </Link>
       </h1>
 
-      <Link to="/shop" className={styles.navLink}>Shop</Link>
+      <Link to="/shop" className={styles.navLink}>Shops</Link>
       <Link to="/menu" className={styles.navLink}>Menu</Link>
       <Link to="/about" className={styles.navLink}>About</Link>
       <Link to="/social" className={styles.navLink}>Social</Link>
@@ -41,5 +44,13 @@ const App = ({ categories }) => (
     </div>
   </div>
 );
+
+App.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.shape({})),
+};
+
+App.defaultProps = {
+  categories: [],
+};
 
 export default fetch(fetchFn)(App);

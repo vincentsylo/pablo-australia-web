@@ -24,11 +24,11 @@ export default function (app) {
     }
   });
 
-  app.get('/api/product/:productId', async (req, res) => {
+  app.get('/api/product/:slug', async (req, res) => {
     try {
-      const { productId } = req.params;
+      const { slug } = req.params;
 
-      const product = await models.Product.findById(productId);
+      const product = await models.Product.find({ where: { urlSlug: slug } });
       res.json(product);
     } catch (error) {
       res.sendStatus(400);

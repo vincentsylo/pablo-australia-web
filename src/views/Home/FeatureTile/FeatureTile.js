@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import cx from 'classnames';
 import styles from './FeatureTile.css';
 
-const FeatureTile = ({ to, shortDescription, imgUrl, large }) => (
+const FeatureTile = ({ to, imgUrl, large }) => (
   <Link to={to}>
     <div
       className={
@@ -21,7 +21,6 @@ const FeatureTile = ({ to, shortDescription, imgUrl, large }) => (
 
 FeatureTile.propTypes = {
   to: PropTypes.string.isRequired,
-  shortDescription: PropTypes.string.isRequired,
   imgUrl: PropTypes.string.isRequired,
   large: PropTypes.bool,
 };

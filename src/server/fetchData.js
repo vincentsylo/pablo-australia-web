@@ -6,13 +6,14 @@ export default async function fetchData(req) {
   const matchedComponents = _(routes)
     .map(route => ({ key: route.path, ...route }))
     .filter(route => _.has(route, 'component.fetch'))
-    .filter(route => matchPath(req.url, route))
+    .filter(route => !!matchPath(req.url, route))
+    .map(route => ({ ...route, params: matchPath(req.url, route).params }))
     .value();
 
   const keys = _.map(matchedComponents, 'key');
   if (!keys.length) return {};
 
-  const responses = await Promise.all(_.map(matchedComponents, fetchObject => fetchObject.component.fetch()));
+  const responses = await Promise.all(_.map(matchedComponents, fetchObject => fetchObject.component.fetch(fetchObject.params)));
 
   return _.zipObject(keys, responses);
 }

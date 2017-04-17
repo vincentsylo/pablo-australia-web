@@ -18,7 +18,7 @@ export default [
     component: Shops,
   },
   {
-    path: '/menu/:id',
+    path: '/menu/:slug',
     component: Product,
   },
   {
