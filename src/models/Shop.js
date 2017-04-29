@@ -23,5 +23,11 @@ export default function (sequelize, DataTypes) {
     postcode: {
       type: DataTypes.INTEGER,
     },
+    state: {
+      type: DataTypes.STRING,
+    },
+    imgUrl: {
+      type: DataTypes.STRING,
+    },
   });
 }

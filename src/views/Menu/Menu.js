@@ -15,7 +15,10 @@ const fetchFn = async () => ({
 class Menu extends PureComponent {
   componentDidMount() {
     const { slug } = this.props.match.params;
-    smoothScroll(document.querySelector(`#${slug}`));
+
+    if (slug) {
+      smoothScroll(document.querySelector(`#${slug}`));
+    }
   }
 
   render() {
