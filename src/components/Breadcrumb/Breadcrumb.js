@@ -6,7 +6,7 @@ import bubble from './bg_header.png';
 const Breadcrumb = ({ title }) => (
   <div className={styles.breadcrumb}>
     <div className={styles.bubble}>
-      <img src={bubble} role="presentation" />
+      <img src={bubble} alt={title} />
     </div>
     <h1 className={styles.title}>{title}</h1>
   </div>
