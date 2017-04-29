@@ -1,10 +1,12 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import styles from './Story.css';
 import logo from '../images/pablo-logo-1.png';
 import { Breadcrumb } from '../../components';
 
 export default () => (
   <div className={styles.root}>
+    <Helmet title="Story" />
     <Breadcrumb title="Story" />
     <div className={styles.container}>
       <div className={styles.logoContainer}>

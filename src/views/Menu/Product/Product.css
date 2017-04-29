@@ -1,17 +1,35 @@
 .root {
-  height: 740px;
+  line-height: 0;
+  position: relative;
 }
 
 .hero {
-  height: 100%;
+  width: 100%;
 }
 
 .descriptionBox {
   background-color: #fff;
   border-radius: 15px 0 0 15px;
-  bottom: 80px;
+  bottom: 30vh;
   padding: 20px;
   position: absolute;
   right: 0;
   width: 410px;
+}
+
+.name {
+  color: #630;
+}
+
+.btn {
+  background: url('./ico_list-bl.png') 20px no-repeat;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  color: #222;
+  display: block;
+  margin: 0 auto;
+  padding: 15px 45px;
+  text-align: center;
+  text-decoration: none;
+  width: 200px;
 }

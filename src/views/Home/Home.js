@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
 import { fetch, News } from '../../components';
 import { api } from '../../utils';
 import styles from './Home.css';
@@ -12,7 +11,6 @@ const fetchFn = async () => ({
 
 const Home = ({ featuredProducts }) => (
   <div className={styles.root}>
-    <Helmet title="Home" />
     <div className={styles.row}>
       <div className={styles.column}>
         { featuredProducts[0] ? <FeatureTile large to={`/menu/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }

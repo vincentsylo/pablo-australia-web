@@ -28,7 +28,10 @@ export default function (app) {
     try {
       const { slug } = req.params;
 
-      const product = await models.Product.find({ where: { urlSlug: slug } });
+      const product = await models.Product.find({
+        where: { urlSlug: slug },
+        include: [{ model: models.Category, as: 'Category' }],
+      });
       res.json(product);
     } catch (error) {
       res.sendStatus(400);

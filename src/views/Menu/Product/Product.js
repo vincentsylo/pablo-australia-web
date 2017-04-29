@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { withRouter } from 'react-router-dom';
-import { fetch } from '../../../components';
+import { withRouter, Link } from 'react-router-dom';
+import { Breadcrumb, fetch } from '../../../components';
 import { api } from '../../../utils';
 import styles from './Product.css';
 
@@ -11,8 +11,7 @@ const fetchFn = async ({ slug }) => ({
 });
 
 class Product extends PureComponent {
-
-  componentDidMount() {
+  componentWillMount() {
     const { product, history } = this.props;
 
     if (!product) {
@@ -27,11 +26,13 @@ class Product extends PureComponent {
     return (
       <div className={styles.root}>
         <Helmet title={product.name} />
-        <div className={styles.hero} style={{ background: `#000 url('${product.imgUrl}') center center / cover no-repeat` }}>
-          <div className={styles.descriptionBox}>
-            <h1>{product.name}</h1>
-            <div className={styles.content}>{product.description}</div>
-          </div>
+        <Breadcrumb title="Menu" />
+        <img src={product.imgUrl} className={styles.hero} alt={product.name} />
+        <div className={styles.descriptionBox}>
+          <h2 className={styles.name}>{product.name}</h2>
+          <div className={styles.content}>{product.description}</div>
+
+          <Link to={`/menu#${product.Category.urlSlug}`} className={styles.btn}>{product.Category.name}</Link>
         </div>
       </div>
     );
