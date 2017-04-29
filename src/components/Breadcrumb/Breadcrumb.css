@@ -1,0 +1,17 @@
+.breadcrumb {
+  background-color: #fed907;
+  height: 60px;
+  position: relative;
+}
+
+.title {
+  font-size: 22px;
+  margin: 0;
+  padding: 12px 30px;
+  position: absolute;
+}
+
+.bubble {
+  position: absolute;
+  top: 8px;
+}

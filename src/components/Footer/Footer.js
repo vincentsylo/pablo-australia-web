@@ -5,7 +5,7 @@ import smoothScroll from 'smoothscroll';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
 import styles from './Footer.css';
-import Shop from '../Shop/Shop';
+import ShopInfo from './ShopInfo/ShopInfo';
 
 export default class Footer extends Component {
   static propTypes = {
@@ -65,7 +65,7 @@ export default class Footer extends Component {
               <ul className={styles.subList}>
                 {
                   _.map(categories, category => (
-                    <li key={category.id}><Link to={`/menu#${category.name}`}>{category.name}</Link></li>
+                    <li key={category.id}><Link to={`/menu#${category.urlSlug}`}>{category.name}</Link></li>
                   ))
                 }
               </ul>
@@ -75,7 +75,7 @@ export default class Footer extends Component {
           <ul className={styles.list} />
         </div>
         <div className={styles.footerBottom} />
-        <Shop />
+        <ShopInfo />
 
         <div className={cx(styles.backToTop, scrollTop > 0 ? styles.show : styles.hide)} onClick={() => smoothScroll(0)}>
           <span className={cx(styles.icon, 'fa fa-chevron-up')} />

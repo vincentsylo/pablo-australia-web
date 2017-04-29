@@ -13,6 +13,11 @@ export default function (sequelize, DataTypes) {
     priority: {
       type: DataTypes.INTEGER,
     },
+    urlSlug: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
   }, {
     classMethods: {
       associate: (models) => {

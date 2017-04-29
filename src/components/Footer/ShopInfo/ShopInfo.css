@@ -1,9 +1,11 @@
 .root {
   background: url('./bg_footer_shop.gif') 0 0 repeat;
-  padding: 50px 0;
+  display: flex;
+  padding: 50px;
 }
 
-.content {
+.shop {
+  flex: 1;
   margin: 0 auto;
   padding: 0 10px;
   width: 1120px;
@@ -16,5 +18,11 @@
 }
 
 .city {
+  display: block;
   font-size: 12px;
 }
+
+.copyright {
+  flex: 1;
+}
+

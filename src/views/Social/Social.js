@@ -1,7 +1,8 @@
 import React from 'react';
+import { Breadcrumb } from '../../components';
 
 export default () => (
   <div>
-    Social
+    <Breadcrumb title="Social" />
   </div>
 );

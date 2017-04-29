@@ -23,23 +23,25 @@ const App = ({ categories }) => (
         </Link>
       </h1>
 
-      <Link to="/shop" className={styles.navLink}>Shops</Link>
+      <Link to="/shop" className={styles.navLink}>Shop</Link>
       <Link to="/menu" className={styles.navLink}>Menu</Link>
-      <Link to="/about" className={styles.navLink}>About</Link>
+      <Link to="/story" className={styles.navLink}>Story</Link>
       <Link to="/social" className={styles.navLink}>Social</Link>
       <Link to="/contact" className={styles.navLink}>Contact</Link>
     </nav>
 
     <div className={styles.mainContent}>
-      <Switch>
-        {
-          _.map(routes, (route) => {
-            const { path, ...rest } = route;
+      <div className={styles.container}>
+        <Switch>
+          {
+            _.map(routes, (route) => {
+              const { path, ...rest } = route;
 
-            return <Route key={path || 'nomatch'} path={path} {...rest} />;
-          })
-        }
-      </Switch>
+              return <Route key={path || 'nomatch'} path={path} {...rest} />;
+            })
+          }
+        </Switch>
+      </div>
       <Footer categories={categories} />
     </div>
   </div>

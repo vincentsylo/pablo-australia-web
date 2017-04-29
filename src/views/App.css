@@ -2,12 +2,10 @@
 
 html,
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.15em;
-  line-height: 1.6;
+  display: inline-block;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 * {
@@ -16,7 +14,14 @@ body {
 
 :global(#app) {
   display: inline-block;
-  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  line-height: 1.6;
+
+  @media (width >= 1280px) {
+    display: block;
+  }
 }
 
 :global(.fa::before) {
@@ -51,4 +56,9 @@ body {
 
 .mainContent {
   margin-left: 155px;
+}
+
+.container {
+  background: url('./images/bg_contents.gif') repeat;
+  padding-bottom: 35px;
 }
