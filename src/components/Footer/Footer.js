@@ -65,7 +65,7 @@ export default class Footer extends Component {
               <ul className={styles.subList}>
                 {
                   _.map(categories, category => (
-                    <li key={category.id}><Link to={`/menu#${category.urlSlug}`}>{category.name}</Link></li>
+                    <li key={category.id}><Link to={`/menu/${category.urlSlug}`}>{category.name}</Link></li>
                   ))
                 }
               </ul>

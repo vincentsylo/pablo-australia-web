@@ -18,11 +18,11 @@ export default [
     component: Shops,
   },
   {
-    path: '/menu/:slug',
+    path: '/product/:slug',
     component: Product,
   },
   {
-    path: '/menu',
+    path: '/menu/:slug?',
     component: Menu,
   },
   {
