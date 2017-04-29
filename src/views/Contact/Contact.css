@@ -1,3 +1,12 @@
 .root {
   padding-bottom: 80px;
 }
+
+.container {
+  background-color: #fff;
+  border-radius: 15px;
+  margin: 80px auto 0;
+  padding: 50px;
+  text-align: center;
+  width: 760px;
+}

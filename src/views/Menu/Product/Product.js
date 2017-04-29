@@ -29,7 +29,7 @@ class Product extends PureComponent {
         <Breadcrumb title="Menu" />
         <img src={product.imgUrl} className={styles.hero} alt={product.name} />
         <div className={styles.descriptionBox}>
-          <h2 className={styles.name}>{product.name}</h2>
+          <h2>{product.name}</h2>
           <div className={styles.content}>{product.description}</div>
 
           <Link to={`/menu#${product.Category.urlSlug}`} className={styles.btn}>{product.Category.name}</Link>

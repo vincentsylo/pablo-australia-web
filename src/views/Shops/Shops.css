@@ -11,10 +11,6 @@
   right: 0;
   top: -60px;
   width: 760px;
-
-  & h2 {
-    color: #630;
-  }
 }
 
 .padding {

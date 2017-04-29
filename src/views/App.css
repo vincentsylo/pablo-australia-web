@@ -28,6 +28,10 @@ body {
   vertical-align: middle;
 }
 
+h2 {
+  color: #630;
+}
+
 .nav {
   background: url('./images/bg_left-nav.gif') 0 0 repeat-y;
   bottom: 0;
