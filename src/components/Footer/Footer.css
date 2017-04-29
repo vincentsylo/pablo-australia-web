@@ -1,11 +1,12 @@
 .root {
   margin: 0 auto;
+  position: relative;
+  top: -35px;
 }
 
 .footerTop {
   background: url('./bg_footer_page.png') center center no-repeat;
   height: 35px;
-  margin-top: -35px;
 }
 
 .footerContent {

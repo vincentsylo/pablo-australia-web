@@ -2,7 +2,7 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import assets from 'assets';
 
-export default ({ html, store, appData }) => `
+export default ({ html, store, appData, helmet }) => `
   <!DOCTYPE html>
   ${
     renderToStaticMarkup((
@@ -10,6 +10,9 @@ export default ({ html, store, appData }) => `
         <head>
           <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" />
           {assets.app.css ? <link rel="stylesheet" type="text/css" href={assets.app.css} /> : null}
+          {helmet.title.toComponent()}
+          {helmet.meta.toComponent()}
+          {helmet.link.toComponent()}
         </head>
 
         <body>

@@ -8,9 +8,10 @@ export default function (sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(10000),
     },
     shortDescription: {
       type: DataTypes.STRING,
@@ -20,6 +21,11 @@ export default function (sequelize, DataTypes) {
     },
     imgUrl: {
       type: DataTypes.STRING,
+    },
+    urlSlug: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
     },
   }, {
     classMethods: {

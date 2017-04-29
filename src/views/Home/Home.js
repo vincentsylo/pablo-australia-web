@@ -13,35 +13,35 @@ const Home = ({ featuredProducts }) => (
   <div className={styles.root}>
     <div className={styles.row}>
       <div className={styles.column}>
-        { featuredProducts[0] ? <FeatureTile large to={`/menu/${featuredProducts[0].id}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeatureTile large to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
       </div>
       <div className={styles.column}>
-        { featuredProducts[0] ? <FeatureTile to={`/menu/${featuredProducts[0].id}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/menu/${featuredProducts[0].id}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/menu/${featuredProducts[0].id}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/menu/${featuredProducts[0].id}`} {...featuredProducts[0]} /> : null }
-      </div>
-    </div>
-    <div className={styles.row}>
-      <div className={styles.column}>
-        { featuredProducts[0] ? <FeatureTile to={`/menu/${featuredProducts[0].id}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/menu/${featuredProducts[0].id}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/menu/${featuredProducts[0].id}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/menu/${featuredProducts[0].id}`} {...featuredProducts[0]} /> : null }
-      </div>
-      <div className={styles.column}>
-        { featuredProducts[1] ? <FeatureTile large to={`/menu/${featuredProducts[1].id}`} {...featuredProducts[1]} /> : null }
+        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
       </div>
     </div>
     <div className={styles.row}>
       <div className={styles.column}>
-        { featuredProducts[2] ? <FeatureTile large to={`/menu/${featuredProducts[2].id}`} {...featuredProducts[2]} /> : null }
+        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
       </div>
       <div className={styles.column}>
-        { featuredProducts[0] ? <FeatureTile to={`/menu/${featuredProducts[0].id}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/menu/${featuredProducts[0].id}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/menu/${featuredProducts[0].id}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/menu/${featuredProducts[0].id}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[1] ? <FeatureTile large to={`/product/${featuredProducts[1].urlSlug}`} {...featuredProducts[1]} /> : null }
+      </div>
+    </div>
+    <div className={styles.row}>
+      <div className={styles.column}>
+        { featuredProducts[2] ? <FeatureTile large to={`/product/${featuredProducts[2].urlSlug}`} {...featuredProducts[2]} /> : null }
+      </div>
+      <div className={styles.column}>
+        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
       </div>
     </div>
 
@@ -50,7 +50,11 @@ const Home = ({ featuredProducts }) => (
 );
 
 Home.propTypes = {
-  featuredProducts: PropTypes.array.isRequired,
+  featuredProducts: PropTypes.arrayOf(
+    PropTypes.shape({
+      urlSlug: PropTypes.string,
+    }),
+  ).isRequired,
 };
 
 export default fetch(fetchFn)(Home);

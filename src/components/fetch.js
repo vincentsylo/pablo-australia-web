@@ -8,7 +8,14 @@ export default function fetch(fn) {
       static fetch = fn;
 
       static propTypes = {
-        match: PropTypes.shape({ path: PropTypes.string }).isRequired,
+        match: PropTypes.shape({
+          path: PropTypes.string,
+          params: PropTypes.shape({}),
+        }),
+      };
+
+      static defaultProps = {
+        match: null,
       };
 
       static contextTypes = {
@@ -29,16 +36,16 @@ export default function fetch(fn) {
           if (prefetchedData[match.path]) {
             this.setState({ data: prefetchedData[match.path] });
           } else {
-            this.fetch();
+            this.fetch(this.props.match.params);
           }
         } else {
           this.setState({ data: this.props });
         }
       }
 
-      fetch() {
+      fetch(params) {
         this.setState({ fetching: true }, async () => {
-          const fetchedData = await fn();
+          const fetchedData = await fn(params);
           this.setState({ data: fetchedData, fetching: false });
         });
       }

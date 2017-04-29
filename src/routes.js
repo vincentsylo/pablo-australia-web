@@ -4,7 +4,7 @@ import Menu from './views/Menu/Menu';
 import Product from './views/Menu/Product/Product';
 import Contact from './views/Contact/Contact';
 import Social from './views/Social/Social';
-import About from './views/About/About';
+import Story from './views/Story/Story';
 import NoMatch from './views/NoMatch/NoMatch';
 
 export default [
@@ -18,11 +18,11 @@ export default [
     component: Shops,
   },
   {
-    path: '/menu/:id',
+    path: '/product/:slug',
     component: Product,
   },
   {
-    path: '/menu',
+    path: '/menu/:slug?',
     component: Menu,
   },
   {
@@ -34,8 +34,8 @@ export default [
     component: Social,
   },
   {
-    path: '/about',
-    component: About,
+    path: '/story',
+    component: Story,
   },
   {
     component: NoMatch,
