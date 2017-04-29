@@ -31,7 +31,7 @@ const App = ({ categories }) => (
     </nav>
 
     <div className={styles.mainContent}>
-      <div className={styles.container}>
+      <div className={styles.routes}>
         <Switch>
           {
             _.map(routes, (route) => {

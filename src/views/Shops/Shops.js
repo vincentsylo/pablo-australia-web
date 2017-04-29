@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Breadcrumb } from '../../components';
+import { Breadcrumb, Container } from '../../components';
 import styles from './Shops.css';
 import shop from './shop.jpg';
 
@@ -20,7 +20,7 @@ export default () => {
 
       <img src={shop} className={styles.hero} alt="Pablo Australia" />
 
-      <div className={styles.container}>
+      <Container className={styles.container}>
         <div className={styles.padding}>
           <h2>{branchName}</h2>
           <span>{address}</span>
@@ -41,7 +41,8 @@ export default () => {
             <span className={styles.row}><span className={styles.label}>Business Hours: </span><span>{hours}</span></span>
           </div>
         </div>
-      </div>
+      </Container>
+
     </div>
   );
 };
