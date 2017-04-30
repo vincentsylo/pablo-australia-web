@@ -11,7 +11,7 @@ export default function (sequelize, DataTypes) {
       unique: true,
     },
     description: {
-      type: DataTypes.STRING(10000),
+      type: DataTypes.TEXT,
     },
     shortDescription: {
       type: DataTypes.STRING,
