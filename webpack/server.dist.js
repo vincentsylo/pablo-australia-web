@@ -1,9 +1,8 @@
 import path from 'path';
 import nodeExternals from 'webpack-node-externals';
-import webpack from 'webpack';
 
 export default {
-  devtool: 'none',
+  devtool: 'eval',
 
   context: path.join(__dirname, '../src'),
 
@@ -46,33 +45,10 @@ export default {
       {
         test: /\.(png|jpe?g|gif|svg|woff)$/,
         use: [
-          'file-loader?name=[name].[ext]',
+          'file-loader?name=/public/[name].[ext]',
         ],
         exclude: /node_modules/,
       },
     ],
   },
-
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
-      },
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,
-      mangle: {
-        screw_ie8: true,
-        keep_fnames: true,
-      },
-      compress: {
-        screw_ie8: true,
-      },
-      comments: false,
-    }),
-  ],
 }
