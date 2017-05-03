@@ -1,5 +1,6 @@
 import path from 'path';
 import nodeExternals from 'webpack-node-externals';
+import CopyPlugin from 'copy-webpack-plugin';
 
 export default {
   devtool: 'eval',
@@ -23,7 +24,7 @@ export default {
   externals: [
     nodeExternals(),
     {
-      assets: `${process.cwd()}/dist/assets.json`,
+      assets: './assets.json',
     }
   ],
 
@@ -51,4 +52,14 @@ export default {
       },
     ],
   },
+
+  plugins: [
+    new CopyPlugin([{
+      from: '../package.json',
+      to: '../dist/package.json',
+    }, {
+      from: '../yarn.lock',
+      to: '../dist/yarn.lock',
+    }]),
+  ],
 }
