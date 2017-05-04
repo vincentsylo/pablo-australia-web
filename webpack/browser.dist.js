@@ -56,10 +56,7 @@ export default {
   },
 
   plugins: [
-    new CleanPlugin([
-      'build',
-      'dist',
-    ], {
+    new CleanPlugin(['build', 'dist'], {
       root: process.cwd(),
     }),
     new AssetsPlugin({

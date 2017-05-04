@@ -13,8 +13,8 @@ export default {
   ],
 
   output: {
-    path: path.join(__dirname, '../dist'),
-    filename: 'server.js',
+    path: path.join(__dirname, '../dist/public'),
+    filename: '../server.js',
     libraryTarget: 'commonjs2',
     publicPath: '/',
   },
@@ -46,7 +46,7 @@ export default {
       {
         test: /\.(png|jpe?g|gif|svg|woff)$/,
         use: [
-          'file-loader?name=/public/[name].[ext]',
+          'file-loader?name=[name].[ext]',
         ],
         exclude: /node_modules/,
       },
@@ -56,10 +56,10 @@ export default {
   plugins: [
     new CopyPlugin([{
       from: '../package.json',
-      to: '../dist/package.json',
+      to: '../package.json',
     }, {
       from: '../yarn.lock',
-      to: '../dist/yarn.lock',
+      to: '../yarn.lock',
     }]),
   ],
 }

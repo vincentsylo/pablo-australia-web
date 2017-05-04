@@ -1,6 +1,5 @@
 import path from 'path';
 import nodeExternals from 'webpack-node-externals';
-import CleanPlugin from 'clean-webpack-plugin';
 import OnBuildPlugin from 'on-build-webpack';
 import nodemon from 'nodemon';
 import WriteFilePlugin from 'write-file-webpack-plugin';
@@ -59,12 +58,6 @@ export default {
   },
 
   plugins: [
-    new CleanPlugin([
-      'build',
-      'dist',
-    ], {
-      root: process.cwd(),
-    }),
     new WriteFilePlugin(),
     new OnBuildPlugin(() => {
       if (!serverStarted) {
