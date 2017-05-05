@@ -1,0 +1,18 @@
+.content {
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 1120px;
+}
+
+.date {
+  color: #ff6600;
+}
+
+.title {
+  color: #663300;
+  margin: 0 16px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

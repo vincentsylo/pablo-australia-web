@@ -36,6 +36,9 @@ Product.propTypes = {
   history: PropTypes.shape({
     replace: PropTypes.func.isRequired,
   }).isRequired,
+  news: PropTypes.shape({
+    title: PropTypes.string,
+  }).isRequired,
 };
 
 export default fetch(fetchFn)(withRouter(Product));

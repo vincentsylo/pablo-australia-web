@@ -32,6 +32,10 @@ h2 {
   color: #630;
 }
 
+a {
+  text-decoration: none;
+}
+
 .nav {
   background: url('./images/bg_left-nav.gif') 0 0 repeat-y;
   bottom: 0;

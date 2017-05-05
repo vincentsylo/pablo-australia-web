@@ -3,6 +3,20 @@ import models from '../models';
 export default function (app) {
   app.get('/api/news', async (req, res) => {
     try {
+      const { limit = 5, offset = 0 } = req.query;
+
+      const result = await models.News.findAndCountAll({ limit, offset });
+      res.json({
+        records: result.rows,
+        totalCount: result.count,
+      });
+    } catch (error) {
+      res.sendStatus(400);
+    }
+  });
+
+  app.get('/api/news/featured', async (req, res) => {
+    try {
       const news = await models.News.findAll({ limit: 3 });
       res.json(news);
     } catch (error) {

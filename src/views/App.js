@@ -25,6 +25,7 @@ const App = ({ categories }) => (
 
       <Link to="/shop" className={styles.navLink}>Shop</Link>
       <Link to="/menu" className={styles.navLink}>Menu</Link>
+      <Link to="/news" className={styles.navLink}>News</Link>
       <Link to="/story" className={styles.navLink}>Story</Link>
       <Link to="/social" className={styles.navLink}>Social</Link>
       <Link to="/contact" className={styles.navLink}>Contact</Link>
