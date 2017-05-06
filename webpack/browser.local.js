@@ -20,7 +20,7 @@ export default {
   },
 
   output: {
-    path: path.join(__dirname, '../build/public'),
+    path: path.join(__dirname, '../dist/public'),
     filename: '[name].js',
     publicPath: '/',
     hotUpdateChunkFilename: 'hot-update/[id].[hash].js',
@@ -31,7 +31,7 @@ export default {
 
   devServer: {
     hot: true,
-    contentBase: path.join(__dirname, '../build/public'),
+    contentBase: path.join(__dirname, '../dist/public'),
     publicPath: '/',
     host: '0.0.0.0',
     inline: false,
@@ -74,14 +74,14 @@ export default {
   },
 
   plugins: [
-    new CleanPlugin(['build', 'dist'], {
+    new CleanPlugin(['dist'], {
       root: process.cwd(),
     }),
     new WriteFilePlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new AssetsPlugin({
-      path: path.join(__dirname, '../build'),
+      path: path.join(__dirname, '../dist'),
       filename: 'assets.json',
     }),
   ],

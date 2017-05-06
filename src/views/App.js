@@ -17,11 +17,9 @@ const App = ({ categories }) => (
   <div className={styles.root}>
     <Helmet titleTemplate="%s | Pablo Australia" defaultTitle="Pablo Australia" />
     <nav className={styles.nav}>
-      <h1 className={styles.logo}>
-        <Link to="/">
-          <img src={logo} alt="Pablo Australia" />
-        </Link>
-      </h1>
+      <Link to="/" className={styles.logo}>
+        <img src={logo} alt="Pablo Australia" />
+      </Link>
 
       <Link to="/shop" className={styles.navLink}>Shop</Link>
       <Link to="/menu" className={styles.navLink}>Menu</Link>

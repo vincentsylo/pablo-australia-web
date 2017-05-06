@@ -16,7 +16,7 @@ export default {
   ],
 
   output: {
-    path: path.join(__dirname, '../build/public'),
+    path: path.join(__dirname, '../dist/public'),
     filename: '../server.js',
     libraryTarget: 'commonjs2',
     publicPath: '/',
@@ -27,7 +27,7 @@ export default {
   externals: [
     nodeExternals(),
     {
-      assets: `${process.cwd()}/build/assets.json`,
+      assets: `${process.cwd()}/dist/assets.json`,
     },
   ],
 
@@ -61,7 +61,7 @@ export default {
     new WriteFilePlugin(),
     new OnBuildPlugin(() => {
       if (!serverStarted) {
-        const watcher = nodemon('./build/server');
+        const watcher = nodemon('./dist/server');
 
         process.once('SIGINT', () => {
           watcher.once('exit', () => {

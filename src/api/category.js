@@ -1,11 +1,14 @@
 import models from '../models';
+import { validateCache } from '../server/serverCache';
 
 export default function (app) {
   app.get('/api/category', async (req, res) => {
     try {
-      const categories = await models.Category.findAll({
-        include: [{ model: models.Product, as: 'Products' }],
-      });
+      const categories = await validateCache(req, () => (
+        models.Category.findAll({
+          include: [{ model: models.Product, as: 'Products' }],
+        })
+      ));
       res.json(categories);
     } catch (error) {
       res.sendStatus(400);
@@ -16,7 +19,7 @@ export default function (app) {
     try {
       const { categoryId } = req.params;
 
-      const category = await models.Category.findById(categoryId);
+      const category = await validateCache(req, () => models.Category.findById(categoryId));
       res.json(category);
     } catch (error) {
       res.sendStatus(400);
