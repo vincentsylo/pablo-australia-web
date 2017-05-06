@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --env=dist -p",
     "lint": "eslint src && stylelint src/**/*.css",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --env=local"
   },
   "keywords": [],
   "author": "",
@@ -42,14 +42,12 @@
     "babel-core": "6.24.1",
     "babel-eslint": "7.2.2",
     "babel-loader": "6.4.1",
-    "babel-node": "6.5.3",
     "babel-plugin-add-module-exports": "0.2.1",
     "babel-plugin-transform-decorators-legacy": "1.3.4",
     "babel-plugin-transform-react-jsx-source": "6.22.0",
-    "babel-preset-es2015": "6.24.1",
+    "babel-preset-env": "1.4.0",
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-0": "6.24.1",
-    "babel-register": "6.24.1",
     "clean-webpack-plugin": "0.1.16",
     "copy-webpack-plugin": "4.0.1",
     "css-loader": "0.28.0",

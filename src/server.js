@@ -16,7 +16,7 @@ app.use(express.static('dist/public'));
 app.use(express.static('build/public'));
 app.get('*', require('./server/serverSideRender'));
 
-const port = process.env.PORT || 8081;
+const port = process.env.NODE_ENV === 'production' ? process.env.PORT : 8081;
 models.sequelize.sync({ force: false })
   .then(() => {
     app.listen(port);

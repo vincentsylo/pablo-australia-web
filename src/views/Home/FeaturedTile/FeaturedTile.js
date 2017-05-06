@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
-import styles from './FeatureTile.css';
+import styles from './FeaturedTile.css';
 
-const FeatureTile = ({ to, imgUrl, large }) => (
+const FeaturedTile = ({ to, imgUrl, large }) => (
   <Link to={to}>
     <div
       className={
@@ -19,14 +19,14 @@ const FeatureTile = ({ to, imgUrl, large }) => (
   </Link>
 );
 
-FeatureTile.propTypes = {
+FeaturedTile.propTypes = {
   to: PropTypes.string.isRequired,
   imgUrl: PropTypes.string.isRequired,
   large: PropTypes.bool,
 };
 
-FeatureTile.defaultProps = {
+FeaturedTile.defaultProps = {
   large: false,
 };
 
-export default FeatureTile;
+export default FeaturedTile;

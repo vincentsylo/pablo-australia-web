@@ -1,9 +1,9 @@
 import path from 'path';
 import nodeExternals from 'webpack-node-externals';
-import webpack from 'webpack';
+import CopyPlugin from 'copy-webpack-plugin';
 
 export default {
-  devtool: 'none',
+  devtool: 'eval',
 
   context: path.join(__dirname, '../src'),
 
@@ -13,8 +13,8 @@ export default {
   ],
 
   output: {
-    path: path.join(__dirname, '../dist'),
-    filename: 'server.js',
+    path: path.join(__dirname, '../dist/public'),
+    filename: '../server.js',
     libraryTarget: 'commonjs2',
     publicPath: '/',
   },
@@ -24,7 +24,7 @@ export default {
   externals: [
     nodeExternals(),
     {
-      assets: `${process.cwd()}/dist/assets.json`,
+      assets: './assets.json',
     }
   ],
 
@@ -44,7 +44,7 @@ export default {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|svg|woff)$/,
+        test: /\.(png|jpe?g|gif|svg|woff|ico)$/,
         use: [
           'file-loader?name=[name].[ext]',
         ],
@@ -54,25 +54,12 @@ export default {
   },
 
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
-      },
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,
-      mangle: {
-        screw_ie8: true,
-        keep_fnames: true,
-      },
-      compress: {
-        screw_ie8: true,
-      },
-      comments: false,
-    }),
+    new CopyPlugin([{
+      from: '../package.json',
+      to: '../package.json',
+    }, {
+      from: '../yarn.lock',
+      to: '../yarn.lock',
+    }]),
   ],
 }

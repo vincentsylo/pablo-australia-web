@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import AssetsPlugin from 'assets-webpack-plugin';
 import WriteFilePlugin from 'write-file-webpack-plugin';
+import CleanPlugin from 'clean-webpack-plugin';
 
 export default {
   devtool: 'cheap-module-source-map',
@@ -63,7 +64,7 @@ export default {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|svg|woff)$/,
+        test: /\.(png|jpe?g|gif|svg|woff|ico)$/,
         use: [
           'file-loader?name=[name].[ext]',
         ],
@@ -73,6 +74,9 @@ export default {
   },
 
   plugins: [
+    new CleanPlugin(['build', 'dist'], {
+      root: process.cwd(),
+    }),
     new WriteFilePlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),

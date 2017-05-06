@@ -1,51 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { fetch, News } from '../../components';
+import { fetch } from '../../components';
 import { api } from '../../utils';
 import styles from './Home.css';
-import FeatureTile from './FeatureTile/FeatureTile';
+import FeaturedTile from './FeaturedTile/FeaturedTile';
+import FeaturedNews from './FeaturedNews/FeaturedNews';
 
 const fetchFn = async () => ({
   featuredProducts: await api.get('/product/featured'),
+  featuredNews: await api.get('/news/featured'),
 });
 
-const Home = ({ featuredProducts }) => (
+const Home = ({ featuredProducts, featuredNews }) => (
   <div className={styles.root}>
     <div className={styles.row}>
       <div className={styles.column}>
-        { featuredProducts[0] ? <FeatureTile large to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeaturedTile large to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
       </div>
       <div className={styles.column}>
-        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-      </div>
-    </div>
-    <div className={styles.row}>
-      <div className={styles.column}>
-        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-      </div>
-      <div className={styles.column}>
-        { featuredProducts[1] ? <FeatureTile large to={`/product/${featuredProducts[1].urlSlug}`} {...featuredProducts[1]} /> : null }
+        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
       </div>
     </div>
     <div className={styles.row}>
       <div className={styles.column}>
-        { featuredProducts[2] ? <FeatureTile large to={`/product/${featuredProducts[2].urlSlug}`} {...featuredProducts[2]} /> : null }
+        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
       </div>
       <div className={styles.column}>
-        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeatureTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[1] ? <FeaturedTile large to={`/product/${featuredProducts[1].urlSlug}`} {...featuredProducts[1]} /> : null }
+      </div>
+    </div>
+    <div className={styles.row}>
+      <div className={styles.column}>
+        { featuredProducts[2] ? <FeaturedTile large to={`/product/${featuredProducts[2].urlSlug}`} {...featuredProducts[2]} /> : null }
+      </div>
+      <div className={styles.column}>
+        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
       </div>
     </div>
 
-    <News />
+    <FeaturedNews news={featuredNews} />
   </div>
 );
 
@@ -55,6 +57,7 @@ Home.propTypes = {
       urlSlug: PropTypes.string,
     }),
   ).isRequired,
+  featuredNews: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
 
 export default fetch(fetchFn)(Home);

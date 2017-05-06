@@ -1,5 +1,4 @@
 import path from 'path';
-import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import AssetsPlugin from 'assets-webpack-plugin';
 import CleanPlugin from 'clean-webpack-plugin';
@@ -41,7 +40,7 @@ export default {
         }),
       },
       {
-        test: /\.(png|jpe?g|gif|svg|woff)$/,
+        test: /\.(png|jpe?g|gif|svg|woff|ico)$/,
         use: [
           'file-loader?name=[name].[ext]',
         ],
@@ -57,31 +56,8 @@ export default {
   },
 
   plugins: [
-    new CleanPlugin([
-      'build',
-      'dist',
-    ], {
+    new CleanPlugin(['build', 'dist'], {
       root: process.cwd(),
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
-      },
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,
-      mangle: {
-        screw_ie8: true,
-        keep_fnames: true,
-      },
-      compress: {
-        screw_ie8: true,
-      },
-      comments: false,
     }),
     new AssetsPlugin({
       path: path.join(__dirname, '../dist'),

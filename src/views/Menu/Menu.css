@@ -1,5 +1,9 @@
 .root {
   padding-bottom: 80px;
+
+  & h2 {
+    margin: 0 0 40px;
+  }
 }
 
 .products {
