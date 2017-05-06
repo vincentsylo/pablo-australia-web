@@ -40,12 +40,12 @@ export default [
     component: Story,
   },
   {
-    path: '/news',
-    component: News,
-  },
-  {
     path: '/news/:slug',
     component: NewsItem,
+  },
+  {
+    path: '/news',
+    component: News,
   },
   {
     component: NoMatch,

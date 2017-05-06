@@ -15,6 +15,11 @@
   overflow: hidden;
   padding: 0;
   text-align: left;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 .imgContainer {
@@ -50,6 +55,7 @@
 }
 
 .description {
+  color: #663300;
   display: block;
   overflow: hidden;
   padding: 8px 0;

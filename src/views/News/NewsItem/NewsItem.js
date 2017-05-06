@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { withRouter } from 'react-router-dom';
-import { Breadcrumb, fetch } from '../../../components';
+import { withRouter, Link } from 'react-router-dom';
+import { Breadcrumb, Container, fetch } from '../../../components';
 import { api } from '../../../utils';
 import styles from './NewsItem.css';
 
@@ -27,6 +27,21 @@ class Product extends PureComponent {
       <div className={styles.root}>
         <Helmet title={news.title} />
         <Breadcrumb title="News" />
+
+        <Container>
+          <h2>{news.title}</h2>
+          <hr />
+          <div className={styles.imgContainer}>
+            <img src={news.imgUrl} alt={news.title} />
+          </div>
+          <div className={styles.content}>
+            {news.description}
+          </div>
+        </Container>
+
+        <div className={styles.footer}>
+          <Link to="/news" className={styles.btn}><i className="fa fa-book" /> News List</Link>
+        </div>
       </div>
     );
   }
