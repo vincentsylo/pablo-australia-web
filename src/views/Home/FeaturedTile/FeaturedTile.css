@@ -1,10 +1,29 @@
+@import 'animate.css';
+
 .featureTile {
   border-radius: 10px;
   margin: 2px;
+  position: relative;
   transition: all 0.1s ease-in-out;
 
   &:hover {
     transform: rotate(2deg) scale(1.1);
+    z-index: 2;
+  }
+}
+
+.animatedTile {
+  align-items: center;
+  background-color: #fedd00;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 2px;
+  padding: 40px;
+  position: relative;
+
+  & img {
+    animation-duration: 1.2s;
   }
 }
 
@@ -16,4 +35,46 @@
 .small {
   height: 275px;
   width: 275px;
+}
+
+.tarts {
+  flex-flow: row wrap;
+}
+
+.tart {
+  margin: 0 8px;
+}
+
+.socialRoot {
+  position: relative;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    transform: rotate(-2deg) scale(1.1);
+    z-index: 2;
+  }
+}
+
+.socialTile {
+  border-radius: 10px;
+  margin: 2px;
+}
+
+.overlay {
+  border: #325c86 solid 4px;
+  border-radius: 10px;
+  bottom: 0;
+  left: 0;
+  margin: 2px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.facebook {
+  background: url('../../images/ico_main_facebook.png') 199px -1px no-repeat;
+}
+
+.instagram {
+  background: url('../../images/ico_main_instagram.png') 199px -1px no-repeat;
 }
