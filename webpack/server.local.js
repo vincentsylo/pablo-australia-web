@@ -48,7 +48,7 @@ export default {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|svg|woff)$/,
+        test: /\.(png|jpe?g|gif|svg|woff|ico)$/,
         use: [
           'file-loader?name=[name].[ext]',
         ],
