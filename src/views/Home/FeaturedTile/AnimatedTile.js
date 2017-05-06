@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './FeaturedTile.css';
-import set from '../../images/img_anime01.png';
-import tart from '../../images/img_anime02.png';
-import drink from '../../images/img_anime03.png';
+import set from '../images/img_anime01.png';
+import tart from '../images/img_anime02.png';
+import drink from '../images/img_anime03.png';
 
 class AnimatedTile extends Component {
   state = {
@@ -20,9 +20,9 @@ class AnimatedTile extends Component {
   }
 
   componentWillUnmount() {
+    clearInterval(this.interval);
     clearTimeout(this.delay);
     clearTimeout(this.delayAlternate);
-    clearInterval(this.interval);
   }
 
   startAnimation = (state) => {

@@ -6,6 +6,7 @@ import styles from './Home.css';
 import FeaturedTile from './FeaturedTile/FeaturedTile';
 import FeaturedNews from './FeaturedNews/FeaturedNews';
 import AnimatedTile from './FeaturedTile/AnimatedTile';
+import SocialTile from './FeaturedTile/SocialTile';
 
 const fetchFn = async () => ({
   featuredProducts: await api.get('/product/featured'),
@@ -16,18 +17,18 @@ const Home = ({ featuredProducts, featuredNews }) => (
   <div className={styles.root}>
     <div className={styles.row}>
       <div className={styles.column}>
-        { featuredProducts[0] ? <FeaturedTile large to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <AnimatedTile type="set" /> : null }
-        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
-        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        <FeaturedTile large to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} />
+        <AnimatedTile type="set" />
+        <FeaturedTile to={`/product/${featuredProducts[1].urlSlug}`} {...featuredProducts[1]} />
+        <FeaturedTile to={`/product/${featuredProducts[2].urlSlug}`} {...featuredProducts[2]} />
+        <SocialTile type="facebook1" />
       </div>
       <div className={styles.column}>
-        { featuredProducts[0] ? <FeaturedTile to={`/news/${featuredNews[0].urlSlug}`} {...featuredNews[0]} /> : null }
-        { featuredProducts[0] ? <AnimatedTile type="set" delay={3400} /> : null }
-        { featuredProducts[1] ? <FeaturedTile large to={`/product/${featuredProducts[1].urlSlug}`} {...featuredProducts[1]} /> : null }
-        { featuredProducts[0] ? <AnimatedTile type="tarts" /> : null }
-        { featuredProducts[0] ? <FeaturedTile to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} /> : null }
+        <SocialTile type="facebook2" />
+        <AnimatedTile type="set" delay={3400} />
+        <FeaturedTile large to={`/news/${featuredNews[0].urlSlug}`} {...featuredNews[0]} />
+        <AnimatedTile type="tarts" />
+        <SocialTile type="instagram" />
       </div>
     </div>
 

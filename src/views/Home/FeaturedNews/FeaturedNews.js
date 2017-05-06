@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 import styles from './FeaturedNews.css';
 
 const FeaturedNews = ({ news }) => (
@@ -12,7 +13,7 @@ const FeaturedNews = ({ news }) => (
         _.map(news, newsItem => (
           <div key={newsItem.id}>
             <span className={styles.date}>{moment(newsItem.createdAt).format('DD/MM/YYYY')}</span>
-            <a href={`/news/${newsItem.urlSlug}`} className={styles.title}>{newsItem.title}</a>
+            <Link to={`/news/${newsItem.urlSlug}`} className={styles.title}>{newsItem.title}</Link>
           </div>
         ))
       }
