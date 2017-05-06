@@ -55,13 +55,23 @@ a {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  transition: opacity 0.2s ease-in-out;
   width: 100%;
+
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 .logo {
   display: block;
   margin: 30px 0;
   text-align: center;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 .mainContent {

@@ -7,8 +7,9 @@ import htmlTemplate from './htmlTemplate';
 import App from '../views/App';
 import configureStore from '../store/configureStore';
 import fetchData from './fetchData';
+import { validateCache } from './serverCache';
 
-export default async function render(req, res) {
+const getPage = async (req) => {
   const promises = [
     App.fetch(),
     fetchData(req),
@@ -31,10 +32,10 @@ export default async function render(req, res) {
   );
 
   const helmet = Helmet.renderStatic();
+  return { html, store: store.getState(), appData, helmet, cacheTime: Date.now() };
+};
 
-  if (context.url) {
-    res.writeHead(301, { Location: context.url });
-  } else {
-    res.send(htmlTemplate({ html, store: store.getState(), appData, helmet }));
-  }
+export default async function cachePage(req, res) {
+  const html = await validateCache(req, getPage);
+  res.send(htmlTemplate(html));
 }
