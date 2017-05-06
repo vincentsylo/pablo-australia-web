@@ -1,10 +1,27 @@
+@import 'animate.css';
+
 .featureTile {
+  background-color: #fedd00;
   border-radius: 10px;
   margin: 2px;
   transition: all 0.1s ease-in-out;
 
   &:hover {
     transform: rotate(2deg) scale(1.1);
+  }
+}
+
+.animatedTile {
+  align-items: center;
+  background-color: #fedd00;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 2px;
+  padding: 40px;
+
+  & img {
+    animation-duration: 1.2s;
   }
 }
 
@@ -16,4 +33,12 @@
 .small {
   height: 275px;
   width: 275px;
+}
+
+.tarts {
+  flex-flow: row wrap;
+}
+
+.tart {
+  margin: 0 8px;
 }
