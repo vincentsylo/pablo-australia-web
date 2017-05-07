@@ -8,7 +8,10 @@ export async function validateCache(req, fn) {
 
   if (!cache[location] || (cache[location] && Date.now() - cache[location].cacheTime > ttl)) {
     const data = await fn(req);
-    cache[location] = data;
+    cache[location] = {
+      ...data,
+      cacheTime: Date.now(),
+    };
   }
 
   return cache[location];
