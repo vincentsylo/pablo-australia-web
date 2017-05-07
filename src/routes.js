@@ -3,7 +3,6 @@ import Shops from './views/Shops/Shops';
 import Menu from './views/Menu/Menu';
 import Product from './views/Menu/Product/Product';
 import Contact from './views/Contact/Contact';
-import Social from './views/Social/Social';
 import Story from './views/Story/Story';
 import NoMatch from './views/NoMatch/NoMatch';
 import News from './views/News/News';
@@ -30,10 +29,6 @@ export default [
   {
     path: '/contact',
     component: Contact,
-  },
-  {
-    path: '/social',
-    component: Social,
   },
   {
     path: '/story',
