@@ -40,6 +40,7 @@ class Menu extends PureComponent {
                     <Link to={`/product/${product.urlSlug}`} key={product.id} className={styles.product}>
                       <img src={product.imgUrl} alt={product.name} className={styles.img} />
                       <h3>{product.name}</h3>
+                      <span className={styles.shortDescription}>{product.shortDescription}</span>
                       <div className={styles.btn}><i className="fa fa-book" /> Details</div>
                     </Link>
                   ))
