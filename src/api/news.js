@@ -29,18 +29,7 @@ export default function (app) {
     try {
       const { slug } = req.params;
 
-      const news = await validateCache(req, models.News.find({ where: { urlSlug: slug } }));
-      res.json(news);
-    } catch (error) {
-      res.sendStatus(400);
-    }
-  });
-
-  app.put('/api/product/:newsId', async (req, res) => {
-    try {
-      const { newsId } = req.params;
-
-      const news = await models.News.update({ ...req.body }, { where: { id: newsId } });
+      const news = await validateCache(req, () => models.News.find({ where: { urlSlug: slug } }));
       res.json(news);
     } catch (error) {
       res.sendStatus(400);
