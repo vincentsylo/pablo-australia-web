@@ -19,7 +19,7 @@ body {
   letter-spacing: 0.15em;
   line-height: 1.6;
 
-  @media (width >= 1280px) {
+  @media (width <= 760px), (width >= 1280px) {
     display: block;
   }
 }
@@ -45,6 +45,10 @@ a {
   top: 0;
   width: 155px;
   z-index: 10;
+
+  @media (width <= 760px) {
+    display: none;
+  }
 }
 
 .navLink {
@@ -76,6 +80,10 @@ a {
 
 .mainContent {
   margin-left: 155px;
+
+  @media (width <= 760px) {
+    margin-left: 0;
+  }
 }
 
 .routes {

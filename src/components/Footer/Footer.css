@@ -12,7 +12,11 @@
   display: flex;
   font-size: 12px;
   margin: 0 auto;
-  width: 1120px;
+  width: 760px;
+
+  @media (width <= 760px) {
+    width: 100%;
+  }
 }
 
 .footerBottom {

@@ -5,4 +5,8 @@
   padding: 50px;
   text-align: center;
   width: 760px;
+
+  @media (width <= 760px) {
+    width: 100%;
+  }
 }

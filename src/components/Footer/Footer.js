@@ -55,7 +55,8 @@ export default class Footer extends Component {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/shop">Shop</Link></li>
             <li><Link to="/menu">Menu</Link></li>
-            <li><Link to="/about">About</Link></li>
+            <li><Link to="/news">News</Link></li>
+            <li><Link to="/story">Story</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
           <ul className={styles.list}>
@@ -70,7 +71,6 @@ export default class Footer extends Component {
               </ul>
             </li>
           </ul>
-          <ul className={styles.list} />
           <ul className={styles.list} />
         </div>
         <div className={styles.footerBottom} />

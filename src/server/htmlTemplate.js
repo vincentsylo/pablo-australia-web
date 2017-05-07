@@ -14,8 +14,8 @@ export default ({ html, store, appData, helmet }) => `
           <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" />
           <meta name="viewport" content="width=device-width, initial-scale=1 ,minimum-scale=1, maximum-scale=1, user-scalable=no" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta name="description" content="チーズケーキ菓子No1の洋菓子店！TVや雑誌など様々なメディアで行列ができると評判の焼きたてチーズタルト専門店PABLO(パブロ)。自慢のチーズタルトは、レアorミディアム2種の焼き加減から食感をお好みでお選びいただけます。" />
-          <meta name="keywords" content="PABLO,パブロ,チーズケーキ,チーズプリン,焼きたてチーズタルト,レア,ミディアム,季節限定,季節の焼きたてシリーズ,チーズミルフィーユ,サブレルチーズ,チョコクランチ,PABLOmini,ミニ,お土産" />
+          <meta name="description" content="PABLO Australia: Japan's #1 cheese tarts is now available in Australia." />
+          <meta name="keywords" content="PABLO, PABLO Australia, cheese tart, Japan" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="" />
           <meta property="og:description" content="" />
