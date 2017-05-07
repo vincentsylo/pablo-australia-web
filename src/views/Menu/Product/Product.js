@@ -30,7 +30,7 @@ class Product extends PureComponent {
         <img src={product.imgUrl} className={styles.hero} alt={product.name} />
         <div className={styles.descriptionBox}>
           <h2>{product.name}</h2>
-          <div className={styles.content}>{product.description}</div>
+          <div className={styles.content}>{product.description || product.shortDescription}</div>
 
           <Link to={`/menu/${product.Category.urlSlug}`} className={styles.btn}>{product.Category.name}</Link>
         </div>

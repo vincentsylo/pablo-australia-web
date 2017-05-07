@@ -33,8 +33,8 @@ export default function fetch(fn) {
         const { prefetchedData } = store.getState();
 
         if (match) {
-          if (prefetchedData[match.path]) {
-            this.setState({ data: prefetchedData[match.path] });
+          if (prefetchedData[match.url]) {
+            this.setState({ data: prefetchedData[match.url] });
           } else {
             this.fetch(this.props.match.params);
           }
