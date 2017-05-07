@@ -60,6 +60,10 @@ export default {
     }, {
       from: '../yarn.lock',
       to: '../yarn.lock',
+    }, {
+      from : '../.env-prod',
+      to: '../.env',
+      toType: 'file',
     }]),
   ],
 }
