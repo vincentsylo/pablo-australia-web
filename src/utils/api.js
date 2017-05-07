@@ -1,7 +1,6 @@
 import createAxios from 'axios';
 
 const axios = createAxios.create({
-  baseURL: 'http://localhost:8080/api',
   headers: {
     common: {
       'Content-Type': 'application/json',
@@ -14,12 +13,12 @@ const axios = createAxios.create({
 
 export default {
   async get(url, params) {
-    const response = await axios.get(url, { params });
+    const response = await axios.get(`${process.env.API_URL}/api${url}`, { params });
     return response.data;
   },
 
   async post(url, params) {
-    const response = await axios.post(url, params);
+    const response = await axios.post(`${process.env.API_URL}/api${url}`, params);
     return response.data;
   },
 };
