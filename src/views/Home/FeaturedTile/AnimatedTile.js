@@ -33,7 +33,9 @@ class AnimatedTile extends Component {
   };
 
   animate = (state) => {
-    this.setState({ [state]: !this.state[state] });
+    if (this.component) {
+      this.setState({ [state]: !this.state[state] });
+    }
   };
 
   renderTarts() {
@@ -46,7 +48,7 @@ class AnimatedTile extends Component {
     });
 
     return (
-      <div className={cx(styles.animatedTile, styles.tarts, styles.small)}>
+      <div ref={(ref) => { this.component = ref; }} className={cx(styles.animatedTile, styles.tarts, styles.small)}>
         <img src={tart} alt="" className={animationCls} />
         <img src={tart} alt="" className={alternateAnimationCls} />
         <img src={tart} alt="" className={alternateAnimationCls} />

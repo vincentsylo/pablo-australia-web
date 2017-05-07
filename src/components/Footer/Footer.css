@@ -12,7 +12,7 @@
   display: flex;
   font-size: 12px;
   margin: 0 auto;
-  width: 760px;
+  width: 1120px;
 
   @media (width <= 760px) {
     width: 100%;
