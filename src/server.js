@@ -15,7 +15,7 @@ getApi(app);
 if (process.env.NODE_ENV !== 'production') {
   app.use(express.static('dist/public'));
 } else {
-  app.use(express.static('uploads'));
+  app.use('/uploads', express.static('uploads'));
   app.use(express.static('public'));
 }
 
