@@ -8,10 +8,6 @@
   display: flex;
   margin: 0 auto;
   width: 1120px;
-
-  @media (width <= 760px) {
-    width: 100%;
-  }
 }
 
 .shop {
@@ -35,3 +31,8 @@
   flex: 1;
 }
 
+@media (width <= 768px) {
+  .container {
+    width: 100%;
+  }
+}

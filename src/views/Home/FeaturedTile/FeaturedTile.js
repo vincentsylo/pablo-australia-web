@@ -5,13 +5,16 @@ import cx from 'classnames';
 import styles from './FeaturedTile.css';
 
 const FeaturedTile = ({ to, imgUrl, large }) => (
-  <Link to={to}>
+  <Link
+    to={to}
+    className={
+      cx(styles.featureTile, {
+        [styles.large]: large,
+        [styles.small]: !large,
+      })}
+  >
     <div
-      className={
-        cx(styles.featureTile, {
-          [styles.large]: large,
-          [styles.small]: !large,
-        })}
+      className={styles.tileImage}
       style={{
         background: `url(${imgUrl}) center center / cover no-repeat`,
       }}

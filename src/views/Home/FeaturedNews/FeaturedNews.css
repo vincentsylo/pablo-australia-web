@@ -2,10 +2,6 @@
   margin: 0 auto;
   padding: 0 10px;
   width: 1120px;
-
-  @media (width <= 760px) {
-    width: 100%;
-  }
 }
 
 .date {
@@ -18,5 +14,11 @@
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+@media (width <= 768px) {
+  .content {
+    width: 100%;
   }
 }

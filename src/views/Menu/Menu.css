@@ -19,10 +19,6 @@
   transition: opacity 0.2s ease;
   width: 200px;
 
-  @media (width <= 760px) {
-    width: 100%;
-  }
-
   & h3 {
     font-size: 14px;
   }
@@ -49,4 +45,10 @@
 .shortDescription {
   display: block;
   font-size: 12px;
+}
+
+@media (width <= 768px) {
+  .product {
+    width: 100%;
+  }
 }

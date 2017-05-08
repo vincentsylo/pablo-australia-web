@@ -13,10 +13,6 @@
   font-size: 12px;
   margin: 0 auto;
   width: 1120px;
-
-  @media (width <= 760px) {
-    width: 100%;
-  }
 }
 
 .footerBottom {
@@ -77,4 +73,10 @@
 .subList {
   list-style-image: url('./ico_list_black02.png');
   padding-left: 20px;
+}
+
+@media (width <= 768px) {
+  .footerContent {
+    width: 100%;
+  }
 }
