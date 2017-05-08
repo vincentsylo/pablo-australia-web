@@ -14,3 +14,14 @@
   flex-shrink: 0;
   width: 558px;
 }
+
+@media (width <= 768px) {
+  .row {
+    display: block;
+    width: 100%;
+  }
+
+  .column {
+    width: 100%;
+  }
+}

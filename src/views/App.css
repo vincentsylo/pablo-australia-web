@@ -19,7 +19,7 @@ body {
   letter-spacing: 0.15em;
   line-height: 1.6;
 
-  @media (width >= 1280px) {
+  @media (width <= 768px), (width >= 1280px) {
     display: block;
   }
 }
@@ -38,6 +38,10 @@ a {
   text-decoration: none;
 }
 
+.header {
+  display: none;
+}
+
 .nav {
   background: url('./images/bg_left-nav.gif') 0 0 repeat-y;
   bottom: 0;
@@ -45,6 +49,10 @@ a {
   top: 0;
   width: 155px;
   z-index: 10;
+
+  & .close {
+    display: none;
+  }
 }
 
 .navLink {
@@ -80,4 +88,76 @@ a {
 
 .routes {
   background: url('./images/bg_contents.gif') repeat;
+}
+
+@media (width <= 768px) {
+  .mainContent {
+    margin-left: 0;
+  }
+
+  .nav {
+    background: none;
+    min-width: 0;
+    right: 0;
+    transition: min-width 0.3s ease;
+    width: 0;
+
+    & .mainNav {
+      background-color: #fff;
+      height: 100%;
+      margin-left: 15%;
+      padding-top: 50px;
+    }
+
+    & .close {
+      background-color: rgba(0, 0, 0, 0.8);
+      bottom: 0;
+      color: #fff;
+      display: block;
+      font-weight: 300;
+      height: 100%;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 15%;
+    }
+
+    & .closeBtn {
+      display: block;
+      padding: 8px;
+    }
+
+    & .logo {
+      display: none;
+    }
+
+    & .navLink {
+      color: #000;
+    }
+  }
+
+  .nav.open {
+    min-width: 85%;
+  }
+
+  .header {
+    align-items: center;
+    background-color: #000;
+    display: flex;
+    padding: 8px;
+
+    & .headerLogo {
+      flex: 1;
+    }
+
+    & img {
+      height: 32px;
+    }
+
+    & .menu {
+      color: #fff;
+      cursor: pointer;
+      text-align: right;
+    }
+  }
 }

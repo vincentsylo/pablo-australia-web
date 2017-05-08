@@ -74,3 +74,9 @@
   list-style-image: url('./ico_list_black02.png');
   padding-left: 20px;
 }
+
+@media (width <= 768px) {
+  .footerContent {
+    width: 100%;
+  }
+}

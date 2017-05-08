@@ -46,3 +46,9 @@
   display: block;
   font-size: 12px;
 }
+
+@media (width <= 768px) {
+  .product {
+    width: 100%;
+  }
+}

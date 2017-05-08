@@ -1,14 +1,19 @@
 .root {
   background: url('./bg_footer_shop.gif') 0 0 repeat;
   display: flex;
-  padding: 50px;
+  padding: 50px 0;
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  width: 1120px;
 }
 
 .shop {
   flex: 1;
   margin: 0 auto;
   padding: 0 10px;
-  width: 1120px;
 }
 
 .state {
@@ -22,7 +27,12 @@
   font-size: 12px;
 }
 
-.copyright {
+.flex {
   flex: 1;
 }
 
+@media (width <= 768px) {
+  .container {
+    width: 100%;
+  }
+}

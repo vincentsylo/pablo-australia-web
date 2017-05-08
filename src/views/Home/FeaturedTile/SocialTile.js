@@ -29,7 +29,7 @@ const SocialTile = ({ type }) => {
   }
 
   return (
-    <a href={to} className={styles.socialRoot}>
+    <a href={to} className={cx(styles.socialTile, styles.small)}>
       <div
         className={cx(styles.overlay, {
           [styles.facebook]: type !== 'instagram',
@@ -37,7 +37,7 @@ const SocialTile = ({ type }) => {
         })}
       />
       <div
-        className={cx(styles.socialTile, styles.small)}
+        className={styles.tileImage}
         style={{
           background: `url(${imgUrl}) center center / cover no-repeat`,
         }}

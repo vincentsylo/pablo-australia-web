@@ -12,6 +12,12 @@
   }
 }
 
+.tileImage {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+}
+
 .animatedTile {
   align-items: center;
   background-color: #fedd00;
@@ -45,7 +51,8 @@
   margin: 0 8px;
 }
 
-.socialRoot {
+.socialTile {
+  margin: 2px;
   position: relative;
   transition: all 0.1s ease-in-out;
 
@@ -55,26 +62,41 @@
   }
 }
 
-.socialTile {
-  border-radius: 10px;
-  margin: 2px;
-}
-
 .overlay {
   border: #325c86 solid 4px;
   border-radius: 10px;
   bottom: 0;
   left: 0;
-  margin: 2px;
   position: absolute;
   right: 0;
   top: 0;
 }
 
 .facebook {
-  background: url('../../images/ico_main_facebook.png') 199px -1px no-repeat;
+  background: url('../../images/ico_main_facebook.png') 101% -1% no-repeat;
 }
 
 .instagram {
-  background: url('../../images/ico_main_instagram.png') 199px -1px no-repeat;
+  background: url('../../images/ico_main_instagram.png') 101% -1% no-repeat;
+}
+
+
+@media (width <= 768px) {
+  .large {
+    width: 100%;
+  }
+
+  .small {
+    width: 50%;
+  }
+
+  .featureTile,
+  .socialTile,
+  .animatedTile {
+    margin: 2px 0;
+
+    &:hover {
+      transform: none;
+    }
+  }
 }
