@@ -1,5 +1,5 @@
 .breadcrumb {
-  background-color: #fed907;
+  background-color: #fadd4b;
   height: 60px;
   position: relative;
 }
@@ -15,4 +15,14 @@
 .bubble {
   position: absolute;
   top: 8px;
+}
+
+@media (width <= 768px) {
+  .breadcrumb {
+    text-align: center;
+  }
+
+  .title {
+    position: relative;
+  }
 }
