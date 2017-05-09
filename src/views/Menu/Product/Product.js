@@ -32,7 +32,7 @@ class Product extends PureComponent {
           <h2>{product.name}</h2>
           <div className={styles.content}>{product.description || product.shortDescription}</div>
 
-          <Link to={`/menu/${product.Category.urlSlug}`} className={styles.btn}>{product.Category.name}</Link>
+          <Link to={`/menu/${product.Category.urlSlug}`} className={styles.btn}><i className="fa fa-book" /> {product.Category.name}</Link>
         </div>
       </div>
     );

@@ -9,7 +9,7 @@
 .descriptionBox {
   background-color: #fff;
   border-radius: 15px 0 0 15px;
-  bottom: 30vh;
+  bottom: 70px;
   padding: 20px;
   position: absolute;
   right: 0;
@@ -26,5 +26,36 @@
   padding: 15px 45px;
   text-align: center;
   text-decoration: none;
-  width: 200px;
+  user-select: none;
+}
+
+@media (width <= 768px) {
+  .descriptionBox {
+    border-radius: 0;
+    bottom: 0;
+    position: relative;
+    width: 100%;
+  }
+
+
+  .btn {
+    background-color: #000;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 12px;
+    margin: 16px auto 0;
+    padding: 10px;
+    transition: opacity 0.2s ease;
+    user-select: none;
+    width: 200px;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+
+.root {
+    padding-bottom: 70px;
+  }
 }
