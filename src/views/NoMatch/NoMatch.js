@@ -11,7 +11,7 @@ export default () => (
 
     <Container>
       <div className={styles.logoContainer}>
-        <img src={logo} className={styles.logo} alt="Pablo Australia" />
+        <img src={logo} className={styles.logo} alt="PABLO Australia" />
       </div>
       <p>The page you have requested was not found.</p>
     </Container>

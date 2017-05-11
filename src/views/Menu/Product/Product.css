@@ -37,7 +37,6 @@
     width: 100%;
   }
 
-
   .btn {
     background-color: #000;
     border-radius: 5px;
@@ -54,8 +53,7 @@
     }
   }
 
-
-.root {
+  .root {
     padding-bottom: 70px;
   }
 }

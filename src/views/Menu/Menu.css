@@ -17,7 +17,7 @@
   font-weight: 300;
   text-decoration: none;
   transition: opacity 0.2s ease;
-  width: 200px;
+  width: 300px;
 
   & h3 {
     font-size: 14px;
@@ -29,6 +29,8 @@
 }
 
 .img {
+  border-radius: 8px;
+  height: 200px;
   width: 100%;
 }
 
@@ -45,10 +47,15 @@
 .shortDescription {
   display: block;
   font-size: 12px;
+  height: 100px;
 }
 
 @media (width <= 768px) {
   .product {
     width: 100%;
+  }
+
+  .img {
+    height: auto;
   }
 }

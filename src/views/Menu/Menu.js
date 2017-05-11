@@ -24,9 +24,14 @@ class Menu extends PureComponent {
   render() {
     const { categories } = this.props;
 
+    const links = _.map(categories, category => ({
+      ...category,
+      urlSlug: `#${category.urlSlug}`,
+    }));
+
     return (
       <div className={styles.root}>
-        <Breadcrumb title="Menu" />
+        <Breadcrumb title="Menu" links={links} />
         <Helmet title="Menu" />
 
         {

@@ -1,5 +1,8 @@
 .breadcrumb {
+  align-items: center;
   background-color: #fadd4b;
+  display: flex;
+  flex-direction: row;
   height: 60px;
   position: relative;
 }
@@ -9,7 +12,8 @@
   line-height: 1.6;
   margin: 0;
   padding: 12px 30px;
-  position: absolute;
+  position: relative;
+  width: 212px;
 }
 
 .bubble {
@@ -17,12 +21,15 @@
   top: 8px;
 }
 
-@media (width <= 768px) {
-  .breadcrumb {
-    text-align: center;
-  }
+.links {
+  flex: 1;
+}
 
-  .title {
-    position: relative;
-  }
+.link {
+  display: inline-block;
+}
+
+.trail:not(:last-child)::after {
+  content: '\003e';
+  margin: 0 8px;
 }

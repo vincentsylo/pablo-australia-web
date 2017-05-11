@@ -7,10 +7,11 @@ import { Breadcrumb, Container } from '../../components';
 export default () => (
   <div className={styles.root}>
     <Helmet title="Story" />
-    <Breadcrumb title="Story" />
-    <Container>
+    <Breadcrumb title="Story" description="History of PABLO" />
+
+    <Container small>
       <div className={styles.logoContainer}>
-        <img src={logo} className={styles.logo} alt="Pablo Australia" />
+        <img src={logo} className={styles.logo} alt="PABLO Australia" />
       </div>
       <h2>The Cheesecake Revolution begins here. Be amazingly surprised by the deliciousness of the PABLO Cheese Tart!</h2>
       <p>
@@ -31,7 +32,7 @@ export default () => (
         differences for every one of our stores overseas, the choice of 2 baking conditions has been adjusted and standardized into 1 final product.
       </p>
       <p>An original recipe is formulated to ensure that the flavour beloved by many in Japan can also be enjoyed by those outside of Japan, regardless of location.</p>
-      <p>Visit PABLO JAPAN</p>
+      <p><a href="//www.pablo3.com/" alt="PABLO Japan">Visit PABLO JAPAN</a></p>
     </Container>
   </div>
 );
