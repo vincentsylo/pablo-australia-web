@@ -38,7 +38,7 @@ export default class Breadcrumb extends PureComponent {
           <img src={bubble} alt={title} />
         </div>
         <h1 className={styles.title}>{title}</h1>
-        { description && <span>{description}</span>}
+        { description && <span className={styles.link}>{description}</span>}
         <div className={styles.links}>
           {
             _.map(links, (link) => {
