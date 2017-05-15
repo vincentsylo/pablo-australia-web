@@ -15,12 +15,12 @@ const fetchFn = async ({ page = 0 }) => ({
 const News = ({ news }) => (
   <div className={styles.root}>
     <Helmet title="News" />
-    <Breadcrumb title="News" />
+    <Breadcrumb title="News" description="Stay up to date with PABLO Australia" />
 
-    <h2>Pablo Australia News</h2>
+    <h2>PABLO Australia News</h2>
     {
       _.map(news.records, newsItem => (
-        <Container key={newsItem.id} className={styles.newsItem}>
+        <Container small key={newsItem.id} className={styles.newsItem}>
           <Link to={`/news/${newsItem.urlSlug}`} className={styles.imgContainer}>
             <img src={newsItem.imgUrl} alt={newsItem.title} />
           </Link>

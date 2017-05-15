@@ -24,9 +24,14 @@ class Menu extends PureComponent {
   render() {
     const { categories } = this.props;
 
+    const links = _.map(categories, category => ({
+      ...category,
+      urlSlug: `#${category.urlSlug}`,
+    }));
+
     return (
       <div className={styles.root}>
-        <Breadcrumb title="Menu" />
+        <Breadcrumb title="Menu" links={links} />
         <Helmet title="Menu" />
 
         {
@@ -38,7 +43,9 @@ class Menu extends PureComponent {
                 {
                   _.map(category.Products, product => (
                     <Link to={`/product/${product.urlSlug}`} key={product.id} className={styles.product}>
-                      <img src={product.imgUrl} alt={product.name} className={styles.img} />
+                      <div className={styles.imgContainer}>
+                        <img src={product.thumbnailUrl} alt={product.name} className={styles.img} />
+                      </div>
                       <h3>{product.name}</h3>
                       <span className={styles.shortDescription}>{product.shortDescription}</span>
                       <div className={styles.btn}><i className="fa fa-book" /> Details</div>

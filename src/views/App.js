@@ -41,10 +41,10 @@ export default class App extends Component {
 
     return (
       <div className={styles.root}>
-        <Helmet titleTemplate="%s | Pablo Australia" defaultTitle="Pablo Australia" />
+        <Helmet titleTemplate="%s | PABLO Australia" defaultTitle="PABLO Australia" />
         <header className={styles.header}>
           <Link to="/" className={styles.headerLogo} onClick={this.closeMenu}>
-            <img src={headerLogo} alt="Pablo Australia" />
+            <img src={headerLogo} alt="PABLO Australia" />
           </Link>
 
           <i className={cx(styles.menu, 'fa fa-bars fa-2x')} onClick={this.openMenu} />
@@ -57,7 +57,7 @@ export default class App extends Component {
 
           <div className={styles.mainNav}>
             <Link to="/" className={styles.logo}>
-              <img src={logo} alt="Pablo Australia" />
+              <img src={logo} alt="PABLO Australia" />
             </Link>
 
             <Link to="/shop" className={styles.navLink} onClick={this.closeMenu}>Shop</Link>

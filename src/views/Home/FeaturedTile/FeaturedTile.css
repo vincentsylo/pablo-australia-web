@@ -15,7 +15,37 @@
 .tileImage {
   border-radius: 10px;
   height: 100%;
+  position: relative;
   width: 100%;
+}
+
+.shadow {
+  background: url('./bg_boxmain_text.png') 0 bottom repeat-x;
+  border-radius: 0 0 10px 10px;
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.description {
+  bottom: 0;
+  color: #fff;
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+
+  & .title {
+    color: #fedd00;
+    margin-bottom: 8px;
+    text-decoration: uppercase;
+  }
+
+  & div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 .animatedTile {

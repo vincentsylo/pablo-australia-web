@@ -23,10 +23,12 @@ class Product extends PureComponent {
     const { news } = this.props;
     if (!news) return null;
 
+    const links = [{ urlSlug: '/news', name: 'News List' }, { urlSlug: `/news/${news.urlSlug}`, name: news.title }];
+
     return (
       <div className={styles.root}>
         <Helmet title={news.title} />
-        <Breadcrumb title="News" />
+        <Breadcrumb title="News" links={links} isTrail />
 
         <Container>
           <h2>{news.title}</h2>

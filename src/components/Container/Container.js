@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './Container.css';
 
-const Container = ({ children, className, ...rest }) => (
-  <div className={cx(styles.root, className)} {...rest}>
+const Container = ({ children, className, small, ...rest }) => (
+  <div className={cx(styles.root, { [styles.small]: small }, className)} {...rest}>
     {children}
   </div>
 );
@@ -15,10 +15,12 @@ Container.propTypes = {
     PropTypes.array,
   ]).isRequired,
   className: PropTypes.string,
+  small: PropTypes.bool,
 };
 
 Container.defaultProps = {
   className: null,
+  small: false,
 };
 
 export default Container;

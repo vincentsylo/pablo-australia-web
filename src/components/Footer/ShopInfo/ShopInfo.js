@@ -10,7 +10,7 @@ export default () => (
         <span className={styles.city}>Sydney, NSW</span>
       </div>
       <div className={styles.flex}>
-        <span>&copy; {new Date().getFullYear()} Pablo Australia</span>
+        <span>&copy; {new Date().getFullYear()} PABLO Australia</span>
       </div>
       <div className={styles.flex} />
     </div>

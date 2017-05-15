@@ -16,9 +16,9 @@ export default () => {
   return (
     <div className={styles.root}>
       <Helmet title="Shop" />
-      <Breadcrumb title="Shop" />
+      <Breadcrumb title="Shop" description="Where you can find us" />
 
-      <img src={shop} className={styles.hero} alt="Pablo Australia" />
+      <img src={shop} className={styles.hero} alt="PABLO Australia" />
 
       <Container className={styles.container}>
         <div className={styles.padding}>

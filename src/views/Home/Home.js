@@ -26,7 +26,7 @@ const Home = ({ featuredProducts, featuredNews }) => (
       <div className={styles.column}>
         <SocialTile type="facebook2" />
         <AnimatedTile type="set" delay={3400} />
-        <FeaturedTile large to={`/news/${featuredNews[0].urlSlug}`} {...featuredNews[0]} />
+        <FeaturedTile news large to={`/news/${featuredNews[0].urlSlug}`} {...featuredNews[0]} />
         <AnimatedTile type="tarts" />
         <SocialTile type="instagram" />
       </div>

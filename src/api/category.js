@@ -7,6 +7,7 @@ export default function (app) {
       const categories = await validateCache(req, () => (
         models.Category.findAll({
           include: [{ model: models.Product, as: 'Products' }],
+          order: ['priority'],
         })
       ));
       res.json(categories);

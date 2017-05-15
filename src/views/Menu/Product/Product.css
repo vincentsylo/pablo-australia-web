@@ -29,6 +29,10 @@
   user-select: none;
 }
 
+.content {
+  white-space: pre-wrap;
+}
+
 @media (width <= 768px) {
   .descriptionBox {
     border-radius: 0;
@@ -36,7 +40,6 @@
     position: relative;
     width: 100%;
   }
-
 
   .btn {
     background-color: #000;
@@ -54,8 +57,7 @@
     }
   }
 
-
-.root {
+  .root {
     padding-bottom: 70px;
   }
 }
