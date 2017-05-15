@@ -12,10 +12,10 @@ app.use(cookieParser());
 
 getApi(app);
 
+app.use('/uploads', express.static('uploads'));
 if (process.env.NODE_ENV !== 'production') {
   app.use(express.static('dist/public'));
 } else {
-  app.use('/uploads', express.static('uploads'));
   app.use(express.static('public'));
 }
 

@@ -29,6 +29,10 @@
   user-select: none;
 }
 
+.content {
+  white-space: pre-wrap;
+}
+
 @media (width <= 768px) {
   .descriptionBox {
     border-radius: 0;

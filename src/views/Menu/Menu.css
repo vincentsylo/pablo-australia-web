@@ -21,6 +21,7 @@
 
   & h3 {
     font-size: 14px;
+    min-height: 44px;
   }
 
   &:hover {
@@ -47,7 +48,7 @@
 .shortDescription {
   display: block;
   font-size: 12px;
-  height: 100px;
+  height: 120px;
 }
 
 @media (width <= 768px) {
