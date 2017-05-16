@@ -36,3 +36,9 @@
   content: '\003e';
   margin-left: 8px;
 }
+
+@media (width <= 768px) {
+  .link {
+    display: none;
+  }
+}

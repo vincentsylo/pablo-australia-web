@@ -67,4 +67,8 @@
   .imgContainer {
     width: 40%;
   }
+
+  .newsItem {
+    border-radius: 0;
+  }
 }

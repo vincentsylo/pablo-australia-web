@@ -117,16 +117,29 @@
   }
 
   .small {
+    width: 49%;
+  }
+
+  .tart {
+    margin: 0;
     width: 50%;
   }
 
   .featureTile,
   .socialTile,
   .animatedTile {
-    margin: 2px 0;
+    margin: 2px auto;
 
     &:hover {
       transform: none;
+    }
+  }
+
+  .animatedTile {
+    padding: 20px;
+
+    & img:not(.tart) {
+      width: 100%;
     }
   }
 }
