@@ -6,6 +6,7 @@ export default function (app) {
     try {
       const products = await validateCache(req, () => models.Product.findAll({
         include: [{ model: models.Category, as: 'Category' }],
+        order: ['order'],
       }));
       res.json(products);
     } catch (error) {

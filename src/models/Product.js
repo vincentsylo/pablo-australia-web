@@ -25,6 +25,9 @@ export default function (sequelize, DataTypes) {
     thumbnailUrl: {
       type: DataTypes.STRING,
     },
+    order: {
+      type: DataTypes.INTEGER,
+    },
     urlSlug: {
       type: DataTypes.STRING,
       allowNull: false,
