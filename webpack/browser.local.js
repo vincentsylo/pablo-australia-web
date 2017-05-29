@@ -1,7 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
 import AssetsPlugin from 'assets-webpack-plugin';
-import WriteFilePlugin from 'write-file-webpack-plugin';
 import CleanPlugin from 'clean-webpack-plugin';
 
 export default {
@@ -23,8 +22,6 @@ export default {
     path: path.join(__dirname, '../dist/public'),
     filename: '[name].js',
     publicPath: '/',
-    hotUpdateChunkFilename: 'hot-update/[id].[hash].js',
-    hotUpdateMainFilename: 'hot-update/[hash].json',
   },
 
   target: 'web',
@@ -38,7 +35,7 @@ export default {
     port: 8080,
     proxy: [
       {
-        context: ['**', '!/hot-update/**'],
+        context: '**',
         target: 'http://localhost:8081',
         secure: false,
       },
@@ -77,7 +74,6 @@ export default {
     new CleanPlugin(['dist'], {
       root: process.cwd(),
     }),
-    new WriteFilePlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new AssetsPlugin({
