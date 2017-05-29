@@ -31,6 +31,7 @@ export default () => {
           height="450"
           frameBorder="0"
           allowFullScreen
+          title="Pablo Australia"
         />
         <div className={styles.padding}>
           <h2>{branchName}</h2>
