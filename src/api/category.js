@@ -29,35 +29,4 @@ export default function (app) {
       res.sendStatus(400);
     }
   });
-
-  app.put('/api/category/:categoryId', async (req, res) => {
-    try {
-      const { categoryId } = req.params;
-
-      const category = await models.Category.update({ ...req.body }, { where: { id: categoryId } });
-      res.json(category);
-    } catch (error) {
-      res.sendStatus(400);
-    }
-  });
-
-  app.post('/api/category', async (req, res) => {
-    try {
-      const category = await models.Category.create({ ...req.body });
-      res.json(category);
-    } catch (error) {
-      res.sendStatus(400);
-    }
-  });
-
-  app.delete('/api/category/:categoryId', async (req, res) => {
-    try {
-      const { categoryId } = req.params;
-
-      const deletedRows = await models.Category.destroy({ where: { id: categoryId } });
-      res.json(deletedRows);
-    } catch (error) {
-      res.sendStatus(400);
-    }
-  });
 }
