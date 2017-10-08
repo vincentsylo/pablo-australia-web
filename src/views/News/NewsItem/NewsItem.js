@@ -36,9 +36,7 @@ class Product extends PureComponent {
           <div className={styles.imgContainer}>
             <img src={news.imgUrl} alt={news.title} />
           </div>
-          <div className={styles.content}>
-            {news.description}
-          </div>
+          <div className={styles.content} dangerouslySetInnerHTML={{ __html: news.description }} />
         </Container>
 
         <div className={styles.footer}>
