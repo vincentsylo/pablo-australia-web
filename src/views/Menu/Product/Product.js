@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { withRouter, Link } from 'react-router-dom';
+import cx from 'classnames';
 import { Breadcrumb, fetch } from '../../../components';
 import { api } from '../../../utils';
 import styles from './Product.css';
@@ -11,6 +12,10 @@ const fetchFn = async ({ slug }) => ({
 });
 
 class Product extends PureComponent {
+  state = {
+    expanded: false,
+  };
+
   componentWillMount() {
     const { product, history } = this.props;
 
@@ -22,6 +27,8 @@ class Product extends PureComponent {
   render() {
     const { product } = this.props;
     if (!product) return null;
+
+    const { expanded } = this.state;
 
     const catCrumb = {
       ...product.Category,
@@ -43,8 +50,17 @@ class Product extends PureComponent {
 
         <img src={product.imgUrl} className={styles.hero} alt={product.name} />
         <div className={styles.descriptionBox}>
+          <div className={styles.header}>
+            {
+              expanded ? (
+                <button className={styles.infoBtn} onClick={() => this.setState({ expanded: false })}><i className="fa fa-chevron-down" /> Less info</button>
+              ) : (
+                <button className={styles.infoBtn} onClick={() => this.setState({ expanded: true })}><i className="fa fa-chevron-up" /> More info</button>
+              )
+            }
+          </div>
           <h2>{product.name}</h2>
-          <div className={styles.content}>{newlineContent}</div>
+          <div className={cx(styles.content, { [styles.expanded]: expanded, [styles.collapsed]: !expanded })}>{newlineContent}</div>
 
           <Link to={`/menu/${product.Category.urlSlug}`} className={styles.btn}><i className="fa fa-book" /> {product.Category.name}</Link>
         </div>
