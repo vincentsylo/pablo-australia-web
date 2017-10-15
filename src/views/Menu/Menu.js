@@ -43,9 +43,12 @@ class Menu extends PureComponent {
                 {
                   _.map(category.Products, product => (
                     <Link to={`/product/${product.urlSlug}`} key={product.id} className={styles.product}>
-                      <div className={styles.imgContainer}>
-                        <img src={product.thumbnailUrl} alt={product.name} className={styles.img} />
-                      </div>
+                      <div
+                        className={styles.imgContainer}
+                        style={{
+                          background: `url(${product.thumbnailUrl}) center center / cover no-repeat`,
+                        }}
+                      />
                       <h3>{product.name}</h3>
                       <span className={styles.shortDescription}>{product.shortDescription}</span>
                       <div className={styles.btn}><i className="fa fa-book" /> Details</div>

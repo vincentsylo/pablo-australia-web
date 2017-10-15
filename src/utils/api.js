@@ -8,9 +8,6 @@ const axios = createAxios.create({
     common: {
       'Content-Type': 'application/json',
     },
-    post: {
-      'Content-Type': 'application/json',
-    },
   },
 });
 

@@ -18,14 +18,14 @@ const Home = ({ featuredProducts, featuredNews }) => (
     <div className={styles.row}>
       <div className={styles.column}>
         <FeaturedTile large to={`/product/${featuredProducts[0].urlSlug}`} {...featuredProducts[0]} />
-        <AnimatedTile type="set" />
+        <AnimatedTile type="tarts" />
         <FeaturedTile to={`/product/${featuredProducts[1].urlSlug}`} {...featuredProducts[1]} />
         <FeaturedTile to={`/product/${featuredProducts[2].urlSlug}`} {...featuredProducts[2]} />
         <SocialTile type="facebook1" />
       </div>
       <div className={styles.column}>
         <SocialTile type="facebook2" />
-        <AnimatedTile type="set" delay={3400} />
+        <AnimatedTile type="tarts" delay={3400} />
         <FeaturedTile news large to={`/news/${featuredNews[0].urlSlug}`} {...featuredNews[0]} />
         <AnimatedTile type="tarts" />
         <SocialTile type="instagram" />

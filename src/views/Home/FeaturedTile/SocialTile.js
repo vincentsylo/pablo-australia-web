@@ -4,7 +4,7 @@ import cx from 'classnames';
 import styles from './FeaturedTile.css';
 import fb from '../images/fb.jpg';
 import fb2 from '../images/fb2.jpg';
-import ig from '../images/ig.jpg';
+import ig from '../images/ig.png';
 
 const SocialTile = ({ type }) => {
   let to;
@@ -21,7 +21,7 @@ const SocialTile = ({ type }) => {
       break;
     }
     case 'instagram': {
-      to = 'https://www.instagram.com/pablo_cheese_tart';
+      to = 'https://www.instagram.com/pablo_cheese_tart_australia/';
       imgUrl = ig;
       break;
     }
