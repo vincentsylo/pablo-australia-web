@@ -40,12 +40,16 @@
   border-radius: 15px;
   color: #fff;
   height: 40px;
-  padding: 0 45px;
+  padding: 0 30px;
   position: absolute;
   right: 0;
   text-align: center;
   text-decoration: none;
   user-select: none;
+
+  &::focus {
+    outline: none;
+  }
 }
 
 .content {
