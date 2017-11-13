@@ -1,6 +1,6 @@
 import createAxios from 'axios';
 
-const prodUrl = '/api';
+const prodUrl = 'http://www.pabloaustralia.com.au/api';
 const devUrl = 'http://localhost:8080/api';
 
 const axios = createAxios.create({
