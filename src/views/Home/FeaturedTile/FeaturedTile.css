@@ -113,6 +113,7 @@
 
 @media (width <= 768px) {
   .large {
+    height: 350px;
     width: 100%;
   }
 

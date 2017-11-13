@@ -6,7 +6,7 @@ export default function (app) {
     try {
       const { limit = 5, offset = 0 } = req.query;
 
-      const result = await validateCache(req, () => models.News.findAndCountAll({ limit, offset }));
+      const result = await validateCache(req, res, () => models.News.findAndCountAll({ limit, offset }));
       res.json({
         records: result.rows,
         totalCount: result.count,
@@ -18,7 +18,7 @@ export default function (app) {
 
   app.get('/api/news/featured', async (req, res) => {
     try {
-      const news = await validateCache(req, () => models.News.findAll({ limit: 3 }));
+      const news = await validateCache(req, res, () => models.News.findAll({ limit: 3 }));
       res.json(news);
     } catch (error) {
       res.sendStatus(400);
@@ -29,7 +29,7 @@ export default function (app) {
     try {
       const { slug } = req.params;
 
-      const news = await validateCache(req, () => models.News.find({ where: { urlSlug: slug } }));
+      const news = await validateCache(req, res, () => models.News.find({ where: { urlSlug: slug } }));
       res.json(news);
     } catch (error) {
       res.sendStatus(400);

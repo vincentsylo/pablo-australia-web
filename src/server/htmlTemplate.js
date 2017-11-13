@@ -11,6 +11,13 @@ export default ({ html, store, appData, helmet }) => `
     renderToStaticMarkup((
       <html lang="en">
         <head>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108363371-2" />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: 'window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-108363371-2");',
+            }}
+          />
+
           <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" />
           <meta name="viewport" content="width=device-width, initial-scale=1 ,minimum-scale=1, maximum-scale=1, user-scalable=no" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -35,7 +42,7 @@ export default ({ html, store, appData, helmet }) => `
         <body>
           <div id="app" dangerouslySetInnerHTML={{ __html: html }} />
           <script dangerouslySetInnerHTML={{ __html: `window.__PREFETCHED_DATA__ = ${JSON.stringify(store)}; window.__APP_DATA__ = ${JSON.stringify(appData)}` }} />
-          <script src="https://use.fontawesome.com/991f6bb4f8.js" />
+          <script async src="https://use.fontawesome.com/991f6bb4f8.js" />
           <script async type="text/javascript" src={assets.app.js} />
         </body>
       </html>

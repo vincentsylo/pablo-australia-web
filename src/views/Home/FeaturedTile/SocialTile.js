@@ -11,12 +11,12 @@ const SocialTile = ({ type }) => {
   let imgUrl;
   switch (type) {
     case 'facebook1': {
-      to = 'https://www.facebook.com/3pablo';
+      to = 'https://www.facebook.com/PabloCheesetartAustralia/';
       imgUrl = fb;
       break;
     }
     case 'facebook2': {
-      to = 'https://www.facebook.com/3pablo';
+      to = 'https://www.facebook.com/PabloCheesetartAustralia/';
       imgUrl = fb2;
       break;
     }

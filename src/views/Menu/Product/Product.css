@@ -3,6 +3,7 @@
 }
 
 .hero {
+  height: 700px;
   width: 100%;
 }
 
@@ -67,6 +68,10 @@
 }
 
 @media (width <= 768px) {
+  .hero {
+    height: 500px;
+  }
+
   .descriptionBox {
     border-radius: 0;
     bottom: 0;

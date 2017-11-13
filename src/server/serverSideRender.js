@@ -36,6 +36,6 @@ const getPage = async (req) => {
 };
 
 export default async function cachePage(req, res) {
-  const html = await validateCache(req, getPage);
+  const html = await validateCache(req, res, getPage);
   res.send(htmlTemplate(html));
 }

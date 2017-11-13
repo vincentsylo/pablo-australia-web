@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import styles from './ShopInfo.css';
 
 export default () => (
@@ -9,10 +10,12 @@ export default () => (
         <span className={styles.city}>605 George St</span>
         <span className={styles.city}>Sydney, NSW</span>
       </div>
-      <div className={styles.flex}>
-        <span>&copy; {new Date().getFullYear()} PABLO Australia</span>
+      <div className={cx(styles.flex, styles.noMobile)}>
+        <span>&copy; {new Date().getFullYear()} PABLO Australia, All Rights Reserved.</span>
       </div>
-      <div className={styles.flex} />
+    </div>
+    <div className={cx(styles.footer, styles.mobile)}>
+      <span>&copy; {new Date().getFullYear()} PABLO Australia, All Rights Reserved.</span>
     </div>
   </div>
 );

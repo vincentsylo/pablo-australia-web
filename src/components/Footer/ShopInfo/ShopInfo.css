@@ -1,13 +1,13 @@
 .root {
   background: url('./bg_footer_shop.gif') 0 0 repeat;
   display: flex;
-  padding: 50px 0;
+  font-size: 12px;
 }
 
 .container {
   display: flex;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 50px 0;
   width: 1120px;
 }
 
@@ -32,8 +32,31 @@
   flex: 1;
 }
 
+.footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.mobile {
+  display: none;
+}
+
 @media (width <= 768px) {
+  .root {
+    flex-direction: column;
+  }
+
   .container {
     width: 100%;
+  }
+
+  .noMobile {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    padding: 20px 0;
   }
 }

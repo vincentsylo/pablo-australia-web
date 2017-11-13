@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link, Switch, withRouter } from 'react-router-dom';
 import _ from 'lodash';
 import Helmet from 'react-helmet';
 import cx from 'classnames';
@@ -11,6 +11,7 @@ import routes from '../routes';
 import logo from './images/logo.jpg';
 import headerLogo from './images/header-logo.png';
 
+@withRouter
 @fetch(async () => ({
   categories: await api.get('/category'),
 }))
@@ -26,6 +27,18 @@ export default class App extends Component {
   state = {
     openMenu: false,
   };
+
+  componentDidMount() {
+    this.unlisten = this.props.history.listen((options, type) => {
+      if (type === 'PUSH') {
+        scrollTo(0, 0);
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    if (this.unlisten) this.unlisten();
+  }
 
   openMenu = () => {
     this.setState({ openMenu: true });

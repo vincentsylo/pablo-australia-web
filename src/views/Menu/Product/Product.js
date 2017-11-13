@@ -48,7 +48,7 @@ class Product extends PureComponent {
         <Helmet title={product.name} />
         <Breadcrumb title="Menu" links={links} isTrail />
 
-        <img src={product.imgUrl} className={styles.hero} alt={product.name} />
+        <div style={{ background: `url(${product.imgUrl}) center center / cover no-repeat` }} className={styles.hero} />
         <div className={styles.descriptionBox}>
           <div className={styles.header}>
             {
