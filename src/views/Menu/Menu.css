@@ -34,7 +34,21 @@
 .imgContainer {
   border-radius: 8px;
   height: 200px;
+  position: relative;
   width: 100%;
+
+  & .comingSoon {
+    background-color: #000;
+    bottom: 0;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    opacity: 0.7;
+    padding: 8px;
+    position: absolute;
+    left: 0;
+    border-bottom-left-radius: 8px;
+  }
 }
 
 .btn {

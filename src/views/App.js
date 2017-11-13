@@ -18,6 +18,7 @@ import headerLogo from './images/header-logo.png';
 export default class App extends Component {
   static propTypes = {
     categories: PropTypes.arrayOf(PropTypes.shape({})),
+    history: PropTypes.shape({ listen: PropTypes.func }).isRequired,
   };
 
   static defaultProps = {

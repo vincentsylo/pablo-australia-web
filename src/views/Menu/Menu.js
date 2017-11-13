@@ -48,7 +48,9 @@ class Menu extends PureComponent {
                         style={{
                           background: `url(${product.thumbnailUrl}) center center / cover no-repeat`,
                         }}
-                      />
+                      >
+                        {product.comingSoon ? <span className={styles.comingSoon}>Coming soon</span> : null}
+                      </div>
                       <h3>{product.name}</h3>
                       <span className={styles.shortDescription}>{product.shortDescription}</span>
                       <div className={styles.btn}><i className="fa fa-book" /> Details</div>

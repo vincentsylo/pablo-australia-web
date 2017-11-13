@@ -33,6 +33,9 @@ export default function (sequelize, DataTypes) {
       allowNull: false,
       unique: true,
     },
+    comingSoon: {
+      type: DataTypes.BOOLEAN,
+    },
   }, {
     classMethods: {
       associate: (models) => {
