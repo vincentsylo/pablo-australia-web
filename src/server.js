@@ -19,7 +19,10 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Credentials', true);
   return next();
 });
-
+app.use((req, res, next) => {
+  res.set({ 'Cache-Control': 'max-age=300' });
+  return next();
+});
 getApi(app);
 
 app.use('/uploads', express.static('uploads'));

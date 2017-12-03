@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
-import moment from 'moment';
 import styles from './FeaturedTile.css';
 
-const FeaturedTile = ({ to, imgUrl, large, name, description, updatedAt, news }) => (
+const FeaturedTile = ({ to, imgUrl, large, name, description }) => (
   <Link
     to={to}
     className={
@@ -22,7 +21,7 @@ const FeaturedTile = ({ to, imgUrl, large, name, description, updatedAt, news })
     >
       <div className={styles.shadow}>
         <div className={styles.description}>
-          <div className={styles.title}>{news ? `News / ${moment(updatedAt).format('DD/MM/YYYY')}` : `Menu - ${name}`}</div>
+          <div className={styles.title}>{`Menu - ${name}`}</div>
           <div>{description}</div>
         </div>
       </div>
@@ -35,14 +34,11 @@ FeaturedTile.propTypes = {
   imgUrl: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   large: PropTypes.bool,
-  news: PropTypes.bool,
-  updatedAt: PropTypes.string.isRequired,
   name: PropTypes.string,
 };
 
 FeaturedTile.defaultProps = {
   large: false,
-  news: false,
   string: null,
   name: null,
 };

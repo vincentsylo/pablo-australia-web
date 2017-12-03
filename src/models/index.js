@@ -3,7 +3,6 @@ import _ from 'lodash';
 import Shop from './Shop';
 import Category from './Category';
 import Product from './Product';
-import News from './News';
 
 const sequelize = new Sequelize(
   process.env.POSTGRES_DB,
@@ -25,7 +24,6 @@ const tables = [
   Shop,
   Category,
   Product,
-  News,
 ];
 
 _.each(tables, (table) => {

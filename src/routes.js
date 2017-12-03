@@ -6,7 +6,6 @@ import Contact from './views/Contact/Contact';
 import Story from './views/Story/Story';
 import NoMatch from './views/NoMatch/NoMatch';
 import News from './views/News/News';
-import NewsItem from './views/News/NewsItem/NewsItem';
 
 export default [
   {
@@ -33,10 +32,6 @@ export default [
   {
     path: '/story',
     component: Story,
-  },
-  {
-    path: '/news/:slug',
-    component: NewsItem,
   },
   {
     path: '/news',

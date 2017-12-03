@@ -7,7 +7,6 @@ import htmlTemplate from './htmlTemplate';
 import App from '../views/App';
 import configureStore from '../store/configureStore';
 import fetchData from './fetchData';
-import { validateCache } from './serverCache';
 
 const getPage = async (req) => {
   const promises = [
@@ -36,6 +35,6 @@ const getPage = async (req) => {
 };
 
 export default async function cachePage(req, res) {
-  const html = await validateCache(req, res, getPage);
+  const html = await getPage(req);
   res.send(htmlTemplate(html));
 }
