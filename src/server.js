@@ -10,20 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use((req, res, next) => {
-  const allowedOrigins = [
-    'http://108.61.251.103',
-    'http://www.pabloaustralia.com.au',
-    'http://pabloaustralia.com.au',
-    'http://localhost:8080',
-    'http://www.pablomini.com.au',
-    'http://pablomini.com.au',
-    'http://www.pablocheesetart.com.au',
-    'http://pablocheesetart.com.au',
-  ];
-  const { origin } = req.headers;
-  if (allowedOrigins.indexOf(origin) > -1) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-  }
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.header('Access-Control-Allow-Credentials', true);
   return next();
