@@ -16,7 +16,9 @@ app.use((req, res, next) => {
     'http://pabloaustralia.com.au',
     'http://localhost:8080',
     'http://www.pablomini.com.au',
+    'http://pablomini.com.au',
     'http://www.pablocheesetart.com.au',
+    'http://pablocheesetart.com.au',
   ];
   const { origin } = req.headers;
   if (allowedOrigins.indexOf(origin) > -1) {
